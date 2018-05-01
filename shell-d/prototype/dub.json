@@ -1,0 +1,10 @@
+{
+	"name": "shell-d",
+	"authors": [
+		"@truedat101",
+		"@pedroalvesbatista"
+	],
+	"description": "A Shell-d blockchain prototype implementation",
+	"copyright": "Copyright 2018, IoTone, Inc.",
+	"license": "MIT"
+}
