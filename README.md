@@ -12,7 +12,7 @@ Why not
 
 ### Why not fork Bitcoin?
 
-TODO
+Bitcoin has addressed the mainstream view for cryptocurrencies and large use of blockchain technology, demonstrating great potential for market change such as new ways to generate and manage digital assets. However, problems involving limitations in scalability and performance with the PoW (Proof-of-Work) such as security had lead to new implementations of Bitcoin and newer approaches. In the Shell Project we aim to work side by side with Bitcoin as matter of keeping up all the blocks generated since when Bitcoin was launched.
 
 ### Why not fork Bytecoin?
 
