@@ -30,19 +30,20 @@ Tons of great use cases here: https://medium.com/swlh/blockchain-benefits-use-ca
 ## Design
 
 From Pedro:
-1 - Simple block generation and verification;
-2 - Node addition and recognizing;
-3 - Simple consensus of which operations was really performed into the blocks:
-4 - Shared state of hashed blocks;
-5 - Node health checking and consensus exposition;
-6 - Consensus achievement and possible "race conditions" that could be envolved
-
+1. Simple block generation and verification;
+2. Node addition and recognizing;
+3. Simple consensus of which operations was really performed into the blocks:
+4. Shared state of hashed blocks;
+5. Node health checking and consensus exposition;
+6. Consensus achievement and possible "race conditions" that could be envolved
+7. Design of simple business logics that could be run into the transaction blocks
 
 ## TODO
 
-- initial commits
-- project plan
-- a white paper
+- Initial commits
+- Project plan
+- A white paper
+- Perform experimental (but very simple) transactions to validate the prototype
 - Find some additional contributors
 
 ## General Notes
