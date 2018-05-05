@@ -49,3 +49,7 @@ From Pedro:
 ## General Notes
 
 TODO
+
+## Future benchmarks with other platforms
+
+TODO
