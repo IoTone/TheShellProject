@@ -48,7 +48,23 @@ From Pedro:
 
 ## General Notes
 
-TODO
+The D language (dlang.org) plays such a special role in software engineering space, providing amazing features for the purpose of saving lots of hours of work and empowering developers and engineers with awesomeness, just for the sake of simplicity and sanity. Some Dlang features aprecciated in this project should be noted :
+
+### Design by Contract
+
+### Template Programming
+
+### Metaprogramming
+
+### Fast compiling
+
+### Good readability
+
+### Code eficiency
+
+### Multiple platforms at once
+
+This undoubtly extends the potential of a general purpose blockchain to not only multiple platforms but others devices types, providing fertile field to explore Internet of Things (IoT) scenarios into the blockchain ecosystem, none to say other use cases in so many industries and academic researches.
 
 ## Future benchmarks with other platforms
 
