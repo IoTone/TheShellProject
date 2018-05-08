@@ -21,6 +21,13 @@ struct networkPool {
 
 class AddressCore {
 
-    string generateAddress() {}
+    string generateAddress() {
+        return null;
+    }
 
+    unittest {
+        AddressCore obj = new AddressCore();
+
+        assert(obj.generateAddress() !is null);
+    }
 }
