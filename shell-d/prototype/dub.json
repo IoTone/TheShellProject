@@ -6,5 +6,8 @@
 	],
 	"description": "A Shell-d blockchain prototype implementation",
 	"copyright": "Copyright 2018, IoTone, Inc.",
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"rocksdb": "~>0.0.7"
+	}
 }
