@@ -6,9 +6,6 @@
 
 module shelld;
 
-/*
-- Application (main entry point)
-*/
 public import shelld.blockcore;
 public import shelld.consensuscore;
 public import shelld.cryptocore;
