@@ -9,6 +9,9 @@ module shelld;
 /*
 - Application (main entry point)
 */
+
+public import shelld.accountcore;
+public import shelld.addresscore;
 public import shelld.blockcore;
 public import shelld.consensuscore;
 public import shelld.cryptocore;
