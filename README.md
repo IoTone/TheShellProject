@@ -45,6 +45,7 @@ From Pedro:
 - A white paper
 - Perform experimental (but very simple) transactions to validate the prototype
 - Find some additional contributors
+- Define model and micro-transaction architecture for the blockchain
 
 ## General Notes
 
