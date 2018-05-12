@@ -7,9 +7,9 @@ module shelld.blockcore;
 
 import std.stdio;
 import std.string;
-import std.algorithm: random, maps;
+import std.random;
 
-struct Block {
+struct Block_ {
    string Hash;
    string Timestamp;
    string Nonce;
@@ -18,17 +18,25 @@ struct Block {
 
 class Block {
 
-   this.Hash         = Hash;
-   this.newBlock     = newBlock;
-   this.previousHash = previousHash;
-   this.Nonce        = Nonce;
-   this.Timestamp    = Timestamp;
+   //this.Hash         = Hash;
+   //this.newBlock     = newBlock;
+   //this.previousHash = previousHash;
+   //this.Nonce        = Nonce;
+   //this.Timestamp    = Timestamp;
 
-   string newBlock() {}
+   string newBlock() {
+       return null;
+   }
 
-   bool validBlock() {}
+   bool validBlock() {
+       return false;
+   }
 
-   string previousHash() {}
+   string previousHash() {
+       return null;
+   }
 
-   string Nonce() {}
+   string Nonce() {
+       return null;
+   }
 }

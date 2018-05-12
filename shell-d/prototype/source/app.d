@@ -8,5 +8,7 @@ import std.stdio;
 
 void main()
 {
-	writeln("Edit source/app.d to start your project.");
+	writeln("Entry point for The Shell Blockchain.");
+	writeln("Starting to call block and address managers...");
+
 }

@@ -16,7 +16,7 @@ struct addressPool {
 
 // Some infos about the pool of networking in which the address is integrating
 struct networkPool {
-     string address
+     string address;
 
 }
 
@@ -24,18 +24,28 @@ struct networkPool {
 
 class AddressCore {
 
-    string generateAddress() {}
+    string generateAddress() {
+        return null;
+    }
 
     // Returns status about the status of the hits for the broadcast over the network
-    bool returnBroadcastStatus() {}
+    bool BroadcastStatus() {
+        return false;
+    }
 
 }
 
 // Check for the local address and sync with the broadcast index of adressess
-void checkAddressIndex() {}
+void checkAddressIndex() {
+    
+}
 
 // Checks for the existence of the address over the network
-bool checkNetworkAddress() {}
+bool checkNetworkAddress() {
+    return false;
+}
 
 // Checks for the existence of the address over the network and fetch the genesis block to verify integrity through blockchain
-bool checkNetworkAddressBlock() {}
+bool checkNetworkAddressBlock() {
+    return false;
+}
