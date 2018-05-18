@@ -8,6 +8,15 @@ module shelld.addresscore;
 import std.stdio;
 import std.string;
 
+string localAddress = new AddressCore();
+
+string addressHash;
+
+struct associatedBlock {
+    
+}
+
+
 // Inserts the address into a pool struct for full block address stamping
 struct addressPool {
      string addressHeader;

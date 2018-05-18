@@ -9,6 +9,13 @@ import std.stdio;
 import std.string;
 import std.random;
 
+string localBlock;
+
+string localBlockStack;
+
+string localBlockAddress;
+
+
 struct Block_ {
    string Hash;
    string Timestamp;
