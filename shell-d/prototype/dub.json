@@ -9,5 +9,8 @@
 	"license": "MIT",
 	"dependencies": {
 		"rocksdb": "~>0.0.7"
-	}
+	},
+	"libraries": ["rocksdb-shared"],
+	"copyFiles-windows-x86" : ["lib/*.dll"],
+	"copyFiles-windows-x86_64" : ["lib64/*.dll"]
 }
