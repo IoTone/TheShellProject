@@ -9,6 +9,7 @@ import std.stdio;
 import std.string;
 import std.random;
 
+<<<<<<< HEAD
 string localBlock;
 
 string localBlockStack;
@@ -23,6 +24,8 @@ struct Block_ {
    string previousHash;
 }
 
+=======
+>>>>>>> 80575b96a2bf9ee96f4622a303ccc3a40dd0a092
 class Block {
 
    //this.Hash         = Hash;

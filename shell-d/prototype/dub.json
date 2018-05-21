@@ -6,5 +6,12 @@
 	],
 	"description": "A Shell-d blockchain prototype implementation",
 	"copyright": "Copyright 2018, IoTone, Inc.",
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"rocksdb": "~>0.0.7",
+		"sodium": "~>0.1.7",
+		"sodium:deimos": "~>0.1.7"
+	},
+	"copyFiles-windows-x86" : ["lib/*.dll"],
+	"copyFiles-windows-x86_64" : ["lib64/*.dll"]
 }
