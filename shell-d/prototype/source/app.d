@@ -20,6 +20,7 @@ void main()
 	writeln("Entry point for The Shell Blockchain.");
 	writeln("Starting to call block and address managers...");
 	writeln("The local address is :", setLocalAddress());
+	writeln("Status of genesis block: ", genesisBlockStatus());
 
 }
 
@@ -31,4 +32,9 @@ void setLocalAddress() {
 
 void setLocalAddressToPeer() {
 
+}
+
+// Returns the status of the genesis
+bool genesisBlockStatus() {
+	return false;
 }

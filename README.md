@@ -90,3 +90,9 @@ TODO
 - Bitcoin: wow, not much to say more than thank you.  Bitcoin fuels our ideas, funds our dreams, and inspires our desire to build.
 - NEM: We are borrowing a lot of great ideas from the NEM white paper.  We wish the entire NEM stack was open source.
 - Ethereum: Bowing to the future king, Ethereum is changing how the finance industry thinks about their own fragile existence.
+
+## Contributions
+
+@pedroalvesbatista
+
+For what we know, that's the first project from ground up made 100% in Brazil '-'
