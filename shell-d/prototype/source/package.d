@@ -18,3 +18,4 @@ public import shelld.cryptocore;
 public import shelld.shellclient;
 public import shelld.shellnode;
 public import shelld.persistence;
+public import shelld.keypair;

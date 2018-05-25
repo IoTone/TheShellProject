@@ -21,6 +21,9 @@ void main()
 	writeln("Starting to call block and address managers...");
 	writeln("The local address is :", setLocalAddress());
 	writeln("Status of genesis block: ", genesisBlockStatus());
+	
+	int globalBlocksCounter;
+	writeln("Total global blocks created: ", globalBlocksCounter);
 
 }
 
