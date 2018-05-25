@@ -25,18 +25,47 @@ struct Block_ {
 
 class Block {
 
-   //this.Hash         = Hash;
-   //this.newBlock     = newBlock;
-   //this.previousHash = previousHash;
-   //this.Nonce        = Nonce;
-   //this.Timestamp    = Timestamp;
+    string newBlock() {
 
-   string newBlock() {
+    this.Block_.Hash = generateHash();         
+    this.Block_.previousHash; 
+    this.Block_.Nonce;        
+    this.Block_.Timestamp;
+     
        return null;
    }
 
+   Block block = new Block();
+
+   
+   // Will use simple SHA-1 to generate the hash
+   string generateHash() {
+       uint randomHash;
+
+   }
+
    bool validBlock() {
-       return false;
+
+       // Timestamp from the last block
+       string lastTimestamp;
+       this.Block_.Timestamp = currentTimestamp;
+
+       if (currentTimestamp > lastTimestamp) {
+           continue;
+       } else {
+           writeln("Incorrect timestamp and block sequence");
+       }
+
+       if (previousHash) {
+           continue;
+       } else {
+           writeln("This blocks has an invalid order or does not exist!");
+       }
+       return true;
+
+       unittest {
+           assertion();
+       }
    }
 
    string previousHash() {
