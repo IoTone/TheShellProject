@@ -17,6 +17,9 @@ cd external
 cd ..
 wget -O rocksdb-v5.12.4.tar.gz https://github.com/facebook/rocksdb/archive/v5.12.4.tar.gz
 tar -xvf rocksdb-v0.5.12.4.tar.gz
+cd rocksdb-v0.5.12.4
+mkdir build && cmake ..
+cd ..
 cd ..
 
 # This grabs rocksdb
@@ -25,6 +28,7 @@ cd ..
 #
 cd ..
 wget -O rocksdb.zip https://github.com/IoTone/rocksdb/archive/master.zip
+unzip rocksdb
 cd ..
 
 # We good
