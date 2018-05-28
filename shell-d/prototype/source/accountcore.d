@@ -27,9 +27,10 @@ class AccountManager {
     void retrieveGlobalStatus() {
 
     }
-}
 
-unittest
-{
-    
+    unittest {
+        AccountManager am = new AccountManager();
+
+        assert(am != null);
+    }
 }

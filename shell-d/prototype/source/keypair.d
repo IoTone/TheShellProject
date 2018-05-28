@@ -26,4 +26,7 @@ class KeyPair {
         return null;
     }
 
+    unittest {
+        
+    }
 }
