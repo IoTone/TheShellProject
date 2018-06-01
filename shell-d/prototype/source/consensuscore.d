@@ -44,4 +44,9 @@ class Consensus {
     void checkGlobalState() {
         return null;
     }
+
+    unittest
+    {
+        
+    }
 }

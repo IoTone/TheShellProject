@@ -9,7 +9,7 @@ import std.stdio;
 import std.string;
 import std.file;
 import std.json;
-
+import rocksdb;
 
 //
 // XXX TODO: Fix this.  It doesn't work well
@@ -49,6 +49,7 @@ class shelldb {
     }
 
     unittest {
+        import std.conv : to;
         auto jsondata = shelldb.load_db();
         assert(!jsondata.isNull);
         /*
@@ -60,5 +61,37 @@ class shelldb {
         jsondata = shelldb.load_db();
         assert("cats" in jsondata);
         */
+        auto opts = new DBOptions;
+        opts.createIfMissing = true;
+        opts.errorIfExists = false;
+
+        auto db = new Database(opts, "testdb");
+
+        // Put a value into the database
+        db.putString("key", "value");
+
+        // Get a value out
+        assert(db.getString("key") == "value");
+
+        ubyte[] key = ['\x00', '\x00'];
+        // Delete a value
+        db.remove(key);
+
+        // Add values in bulk
+        auto batch = new WriteBatch;
+        for (int i = 0; i < 1000; i++) {
+        batch.putString(i.to!string, i.to!string);
+        }
+        db.write(batch);
+
+        // Iterate over the DB
+        auto iter = db.iter();
+        foreach (key, value; iter) {
+        db.remove(key);
+        }
+        destroy(iter);
+
+        // Close the database
+        db.close();
     }
 }

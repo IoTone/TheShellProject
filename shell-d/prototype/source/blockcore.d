@@ -33,7 +33,7 @@ class Block {
     this.Block_.Timestamp;
      
        return null;
-   }
+    }
 
    Block block = new Block();
 
@@ -41,41 +41,47 @@ class Block {
    string rootHash;
 
    
-   // Will use simple SHA-1 to generate the hash
-   string generateHash() {
-       uint randomHash;
+    // Will use simple SHA-1 to generate the hash
+    string generateHash() {
+        uint randomHash;
 
-   }
+    }
 
-   bool validBlock() {
+    bool validBlock() {
 
-       // Timestamp from the last block
-       string lastTimestamp;
-       this.Block_.Timestamp = currentTimestamp;
+        // Timestamp from the last block
+        string lastTimestamp;
+        this.Block_.Timestamp = currentTimestamp;
 
-       if (currentTimestamp > lastTimestamp) {
-           continue;
-       } else {
-           writeln("Incorrect timestamp and block sequence");
-       }
+        if (currentTimestamp > lastTimestamp) {
+            continue;
+        } else {
+            writeln("Incorrect timestamp and block sequence");
+        }
 
-       if (previousHash) {
-           continue;
-       } else {
-           writeln("This blocks has an invalid order or does not exist!");
-       }
-       return true;
+        if (previousHash) {
+            continue;
+        } else {
+            writeln("This blocks has an invalid order or does not exist!");
+        }
+        return true;
 
-       unittest {
-           assertion();
-       }
-   }
+        unittest {
+            assertion();
+        }
+    }
 
-   string previousHash() {
-       return null;
-   }
+    string previousHash() {
+        return null;
+    }
 
-   string Nonce() {
-       return null;
-   }
+    string Nonce() {
+        return null;
+    }
+
+    unittest{
+        Block ablock = new Block();
+
+        assert(ablock != null);
+    }
 }

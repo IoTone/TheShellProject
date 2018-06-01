@@ -13,6 +13,15 @@ TODO
 
 ## Building
 
+First obtain external dependencies  and they should build as well if needed:
+
+> ./setup-deps.sh
+
+Additional steps:
+- You will need a rocksdb library .so.  Build rocksdb directly, and copy the library into the root of this folder
+
+
+Then
 - Use Dub, ldc2
 - run: dub build --compiler=ldc2 (use compiler flag in case you also have DMD in the path)
 
