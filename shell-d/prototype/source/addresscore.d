@@ -8,6 +8,8 @@ module shelld.addresscore;
 import std.stdio;
 import std.string;
 
+string localAddress = new AddressCore();
+
 string addressHash;
 
 struct associatedBlock {
@@ -40,21 +42,22 @@ class AddressCore {
         return false;
     }
 
-    // Check for the local address and sync with the broadcast index of adressess
-    void checkAddressIndex() {
-        
-    }
+}
 
-    // Checks for the existence of the address over the network
-    bool checkNetworkAddress() {
-        return false;
-    }
-
-    // Checks for the existence of the address over the network and fetch the genesis block to verify integrity through blockchain
-    bool checkNetworkAddressBlock() {
-        return false;
-    }
+// Check for the local address and sync with the broadcast index of adressess
+void checkAddressIndex() {
     
+}
+
+// Checks for the existence of the address over the network
+bool checkNetworkAddress() {
+    return false;
+}
+
+// Checks for the existence of the address over the network and fetch the genesis block to verify integrity through blockchain
+bool checkNetworkAddressBlock() {
+    return false;
+
     unittest {
         AddressCore obj = new AddressCore();
 

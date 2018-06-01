@@ -37,6 +37,9 @@ class Block {
 
    Block block = new Block();
 
+   // Each block has its own root hash which is a way to another hashes combination
+   string rootHash;
+
    
    // Will use simple SHA-1 to generate the hash
    string generateHash() {
