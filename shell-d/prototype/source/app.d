@@ -19,12 +19,17 @@ void main()
 {
 	writeln("Entry point for The Shell Blockchain.");
 	writeln("Starting to call block and address managers...");
+	writeln("Pushing a Hello World to the blockchain...", pushHelloWorld());
 	writeln("The local address is :", setLocalAddress());
 	writeln("Status of genesis block: ", genesisBlockStatus());
 	
 	int globalBlocksCounter;
 	writeln("Total global blocks created: ", globalBlocksCounter);
 
+}
+
+string pushHelloWorld() {
+	helloWorld_msg = "Hello World into the Blockchain \o/";
 }
 
 void setLocalAddress() {

@@ -9,6 +9,10 @@ import std.stdio;
 import std.string;
 import std.random;
 
+import shelld.cryptocore;
+import shelld.persistence;
+import shelld.keypair;
+
 string localBlock;
 
 string localBlockStack;
@@ -44,6 +48,10 @@ class Block {
     // Will use simple SHA-1 to generate the hash
     string generateHash() {
         uint randomHash;
+        foreach ([a-z][0-9]) {
+
+        }
+
 
     }
 
