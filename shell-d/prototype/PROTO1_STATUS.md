@@ -10,6 +10,8 @@ This release covered some basic functionality and concepts:
 
 ## Review
 
+Minimal code review performed, very little testing, not sure if this compiles even
+
 
 ## Next Steps
 
