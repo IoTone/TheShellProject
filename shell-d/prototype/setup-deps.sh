@@ -14,11 +14,11 @@ cd external
 # This grabs rocksdb
 # It does not build it.  Do that manually
 #
-cd ..
+# cd ..
 wget -O rocksdb-v5.12.4.tar.gz https://github.com/facebook/rocksdb/archive/v5.12.4.tar.gz
-tar -xvf rocksdb-v0.5.12.4.tar.gz
-cd rocksdb-v0.5.12.4
-mkdir build && cmake ..
+tar -xvf rocksdb-v5.12.4.tar.gz
+cd rocksdb-5.12.4
+mkdir -p build && cd build && cmake .. && make
 cd ..
 cd ..
 
