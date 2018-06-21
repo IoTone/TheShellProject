@@ -50,9 +50,11 @@ class Block {
     // Will use simple SHA-1 to generate the hash
     string generateHash() {
         uint randomHash;
+        /*
         foreach ([a-z][0-9]) {
 
         }
+        */
 
 
     }
@@ -75,10 +77,6 @@ class Block {
             writeln("This blocks has an invalid order or does not exist!");
         }
         return true;
-
-        unittest {
-            assertion();
-        }
     }
 
     string previousHash() {

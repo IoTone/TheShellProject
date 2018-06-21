@@ -57,10 +57,10 @@ bool checkNetworkAddress() {
 // Checks for the existence of the address over the network and fetch the genesis block to verify integrity through blockchain
 bool checkNetworkAddressBlock() {
     return false;
+}
 
-    unittest {
+unittest {
         AddressCore obj = new AddressCore();
 
         // assert(obj.generateAddress() !is null);
-    }
 }

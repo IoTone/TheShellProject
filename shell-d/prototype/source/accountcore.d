@@ -12,7 +12,6 @@ import std.conv : to;
 struct Account_ {
     string accountId;
     string accountAddress;
-    []
 }
 
 class AccountManager {

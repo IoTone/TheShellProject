@@ -29,7 +29,7 @@ void main()
 }
 
 string pushHelloWorld() {
-	helloWorld_msg = "Hello World into the Blockchain \o/";
+	helloWorld_msg = `Hello World into the Blockchain \o/`;
 }
 
 void setLocalAddress() {
