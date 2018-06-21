@@ -4,7 +4,7 @@
 #
 **/
 
-module transactioncore;
+module shelld.transactioncore;
 
 struct Transaction_ {
     string transactionHash;

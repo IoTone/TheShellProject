@@ -16,7 +16,7 @@ struct Account_ {
 
 class AccountManager {
 
-    Account account = new Account();
+    Account_ account;
 
     // Takes anything thats is an asset and attach to account
     void publishAsset() {

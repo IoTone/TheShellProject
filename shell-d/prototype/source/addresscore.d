@@ -8,7 +8,6 @@ module shelld.addresscore;
 import std.stdio;
 import std.string;
 
-string localAddress = new AddressCore();
 
 string addressHash;
 
@@ -32,6 +31,7 @@ struct networkPool {
 
 
 class AddressCore {
+    // AddressCore localAddress = new AddressCore();
 
     string generateAddress() {
         return null;
