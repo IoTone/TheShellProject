@@ -26,9 +26,8 @@ cd ..
 # This grabs the rocksdb d wrapper library
 # It does not build it.  It assumes the d build will do that
 #
-cd ..
 wget -O rocksdb.zip https://github.com/IoTone/rocksdb/archive/master.zip
-unzip rocksdb
+unzip rocksdb.zip
 cd ..
 
 # We good
