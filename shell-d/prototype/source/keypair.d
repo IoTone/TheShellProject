@@ -4,7 +4,7 @@
 #
 **/
 
-module keypair;
+module shelld.keypair;
 
 import shelld.addresscore;
 import shelld.blockcore;
