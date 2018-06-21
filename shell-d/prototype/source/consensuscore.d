@@ -19,30 +19,30 @@ class Consensus {
     }
 
     void checkBlockProof() {
-        return null;
+
     }
 
     void checkBlockAtomicity() {
-        return null;
+
     }
 
     void includeAssetIndex() {
-        return null;
+
     }
 
     // 
     void verifyAssetMatrix() {
-        return null;
+  
     }
 
     // Determine which peer can perform some operation once green light is took
     void determinePeerReflection() {
-        return null;
+
     }
 
     // Looks for the whole state of blocks that already passed in consensus
     void checkGlobalState() {
-        return null;
+
     }
 
     unittest
