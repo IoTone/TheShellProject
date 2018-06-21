@@ -7,7 +7,7 @@
 module shelld.keypair;
 
 import shelld.addresscore;
-import shelld.blockcore;
+// import shelld.blockcore;
 import shelld.cryptocore;
 import shelld.persistence;
 import deimos.sodium;
