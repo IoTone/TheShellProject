@@ -20,7 +20,6 @@ class AccountManager {
 
     // Takes anything thats is an asset and attach to account
     void publishAsset() {
-        return null;
     }
 
     void retrieveGlobalStatus() {
