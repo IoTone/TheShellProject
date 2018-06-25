@@ -20,7 +20,7 @@ void main()
 	writeln("Entry point for The Shell Blockchain.");
 	writeln("Starting to call block and address managers...");
 	writeln("Pushing a Hello World to the blockchain...", pushHelloWorld());
-	writeln("The local address is :", setLocalAddress());
+	writeln("The local address is :");
 	writeln("Status of genesis block: ", genesisBlockStatus());
 	
 	int globalBlocksCounter;
@@ -29,12 +29,14 @@ void main()
 }
 
 string pushHelloWorld() {
-	helloWorld_msg = "Hello World into the Blockchain \o/";
+	auto helloWorld_msg = `Hello World into the Blockchain \o/`;
+
+	return helloWorld_msg;
 }
 
 void setLocalAddress() {
 
-	auto localAddress = addresscore.localAddress;
+	//  auto localAddress = addresscore.localAddress;
 
 }
 

@@ -29,7 +29,21 @@ struct Block_ {
    string previousHash;
 }
 
+/**
+TODO: XXX fix compile errors and uncomment this block
+source/blockcore.d(36,5): Error: cannot implicitly convert expression this of type shelld.blockcore.Block to string
+source/blockcore.d(37,5): Error: cannot implicitly convert expression this of type shelld.blockcore.Block to string
+source/blockcore.d(38,5): Error: cannot implicitly convert expression this of type shelld.blockcore.Block to string
+source/blockcore.d(39,5): Error: cannot implicitly convert expression this of type shelld.blockcore.Block to string
+source/blockcore.d(49,12): Error: function shelld.blockcore.Block.generateHash has no return statement, but is expected to return a value of type string
+source/blockcore.d(64,9): Error: cannot implicitly convert expression this of type shelld.blockcore.Block to string
+source/blockcore.d(66,13): Error: undefined identifier currentTimestamp
+source/blockcore.d(67,13): Error: continue is not inside a loop
+source/blockcore.d(73,13): Error: continue is not inside a loop
+*/
 class Block {
+
+/**
 
     string newBlock() {
 
@@ -41,8 +55,6 @@ class Block {
        return null;
     }
 
-   Block block = new Block();
-
    // Each block has its own root hash which is a way to another hashes combination
    string rootHash;
 
@@ -50,9 +62,6 @@ class Block {
     // Will use simple SHA-1 to generate the hash
     string generateHash() {
         uint randomHash;
-        foreach ([a-z][0-9]) {
-
-        }
 
 
     }
@@ -75,10 +84,6 @@ class Block {
             writeln("This blocks has an invalid order or does not exist!");
         }
         return true;
-
-        unittest {
-            assertion();
-        }
     }
 
     string previousHash() {
@@ -94,4 +99,5 @@ class Block {
 
         assert(ablock != null);
     }
+    */
 }

@@ -29,6 +29,7 @@ cd ..
 wget -O rocksdb.zip https://github.com/IoTone/rocksdb/archive/master.zip
 unzip rocksdb.zip
 cd rocksdb-master
+cd ..
 
 # We good
 cd ..

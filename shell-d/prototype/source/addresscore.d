@@ -8,7 +8,6 @@ module shelld.addresscore;
 import std.stdio;
 import std.string;
 
-string localAddress = new AddressCore();
 
 string addressHash;
 
@@ -32,6 +31,7 @@ struct networkPool {
 
 
 class AddressCore {
+    // AddressCore localAddress = new AddressCore();
 
     string generateAddress() {
         return null;
@@ -57,10 +57,10 @@ bool checkNetworkAddress() {
 // Checks for the existence of the address over the network and fetch the genesis block to verify integrity through blockchain
 bool checkNetworkAddressBlock() {
     return false;
+}
 
-    unittest {
+unittest {
         AddressCore obj = new AddressCore();
 
         // assert(obj.generateAddress() !is null);
-    }
 }
