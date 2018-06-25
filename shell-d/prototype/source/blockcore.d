@@ -13,35 +13,43 @@ import shelld.cryptocore;
 import shelld.persistence;
 import shelld.keypair;
 
+import deimos.sodium;
 
 
+/*
+// Variables which serves the network's pool of blocks to assign transactions to addresses
+// Perhaps, if needed, they can turn into structs
+
+// This holds reference to the blocks generated locally
 string localBlock;
-
+//All blocks generated locally fits into this reference
 string localBlockStack;
-
+// All blocks addresses, in case of more than one block per address and it's chains
 string localBlockAddress;
+*/
 
 
-struct Block_ {
-   string Hash;
+struct Block {
+   string blockHash;
    string Timestamp;
    string Nonce;
-   string previousHash;
+   string previousHash;   
 }
 
-class Block {
+
 
     string newBlock() {
 
-    this.Block_.Hash = generateHash();         
-    this.Block_.previousHash; 
-    this.Block_.Nonce;        
-    this.Block_.Timestamp;
+    Block.Hash = generateHash();         
+    Block.previousHash; 
+    Block.Nonce;        
+    Block.Timestamp;
+    Block.blockHash;
      
        return null;
     }
 
-   Block block = new Block();
+   
 
    // Each block has its own root hash which is a way to another hashes combination
    string rootHash;
@@ -49,10 +57,8 @@ class Block {
    
     // Will use simple SHA-1 to generate the hash
     string generateHash() {
-        uint randomHash;
-        foreach ([a-z][0-9]) {
-
-        }
+        string Hash = ;
+        
 
 
     }
@@ -61,7 +67,7 @@ class Block {
 
         // Timestamp from the last block
         string lastTimestamp;
-        this.Block_.Timestamp = currentTimestamp;
+        Block.Timestamp = currentTimestamp;
 
         if (currentTimestamp > lastTimestamp) {
             continue;
@@ -76,13 +82,13 @@ class Block {
         }
         return true;
 
-        unittest {
-            assertion();
-        }
+        
     }
 
     string previousHash() {
+        string lastBlockHash;
         return null;
+
     }
 
     string Nonce() {
@@ -94,4 +100,5 @@ class Block {
 
         assert(ablock != null);
     }
-}
+
+ 

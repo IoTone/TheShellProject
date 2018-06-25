@@ -4,7 +4,7 @@
 #
 **/
 
-module certificacore;
+module certificatecore;
 
 import shelld.cryptocore;
 import shelld.addresscore;
