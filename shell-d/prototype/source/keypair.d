@@ -4,10 +4,11 @@
 #
 **/
 
-module keypair;
+module shelld.keypair;
 
+import std.stdio;
 import shelld.addresscore;
-import shelld.blockcore;
+// import shelld.blockcore;
 import shelld.cryptocore;
 import shelld.persistence;
 import deimos.sodium;
@@ -16,32 +17,36 @@ import deimos.sodium;
 // into a file, thus, further recovering is done once the app.d is re-run
 // and all the states before that are not lost.
 
-    void publicKey() {
+    string publicKey() {
         return null;
 
         string publicKey;
 
         // Puts the public key generated from the hash into a file
         // for further recovery
-        pushToFile;
+        auto pushToFile = File("keypair", "w");
     }
 
-    void privateKey() {
+    string privateKey() {
+
         return null;
+
     }
 
-    void generateKey() {
+    string generateKey() {
+
         return null;
+
     }
 
     bool verifyAddressKey() {
-        
-        if (addressKey) {
+        bool addressKeyIsVerified = false;
+        if (addressKeyIsVerified) {
 
         } else {
             writeln("Address keypair does not match");
         }
         
-        return null;
+        return false;
     }
 

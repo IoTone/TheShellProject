@@ -9,7 +9,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"rocksdb": {
-			"path" : "./external/rocksdb",
+			"path" : "./external/rocksdb-master",
 			"version": "0.0.7"
 		},
 		"sodium": "~>0.1.7",

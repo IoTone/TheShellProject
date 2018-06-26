@@ -9,14 +9,13 @@ import std.stdio;
 import std.string;
 import std.random;
 
-import shelld.cryptocore;
 import shelld.persistence;
 import shelld.keypair;
 
 import deimos.sodium;
 
 
-/*
+/**
 // Variables which serves the network's pool of blocks to assign transactions to addresses
 // Perhaps, if needed, they can turn into structs
 
@@ -26,10 +25,11 @@ string localBlock;
 string localBlockStack;
 // All blocks addresses, in case of more than one block per address and it's chains
 string localBlockAddress;
-*/
+**/
 
 
 struct Block {
+   string Hash;
    string blockHash;
    string Timestamp;
    string Nonce;
@@ -37,16 +37,21 @@ struct Block {
 }
 
 
+    string newBlock(string Hash, string previousHash, string Nonce, string Timestamp) {
 
-    string newBlock() {
+    import shelld.cryptocore;    
 
-    Block.Hash = generateHash();         
-    Block.previousHash; 
-    Block.Nonce;        
-    Block.Timestamp;
-    Block.blockHash;
+    string Hash         = this.Block.Hash ;         
+    string previousHash = this.Block.previousHash; 
+    string Nonce        = nonce;        
+    string Timestamp    = this.Block.Timestamp;
+    string blockHash    = this.Block.blockHash;
      
-       return null;
+       return true;
+    }
+
+    void includeBlock() {
+        return true;
     }
 
    
@@ -57,9 +62,9 @@ struct Block {
    
     // Will use simple SHA-1 to generate the hash
     string generateHash() {
-        string Hash = ;
-        
+        string Hash;  
 
+        return null;  
 
     }
 
@@ -67,16 +72,20 @@ struct Block {
 
         // Timestamp from the last block
         string lastTimestamp;
-        Block.Timestamp = currentTimestamp;
+
+        // Current timestamp for the recent block
+        string currentTimestamp;
+    
+        this.Block.Timestamp = currentTimestamp;
 
         if (currentTimestamp > lastTimestamp) {
-            continue;
+            
         } else {
             writeln("Incorrect timestamp and block sequence");
         }
 
         if (previousHash) {
-            continue;
+           
         } else {
             writeln("This blocks has an invalid order or does not exist!");
         }
@@ -92,8 +101,16 @@ struct Block {
     }
 
     string Nonce() {
-        return null;
+        
+        import shelld.cryptocore;
+
+        string nonce = nonce;
+
+
+        return nonce;
     }
+
+    
 
     unittest{
         Block ablock = new Block();

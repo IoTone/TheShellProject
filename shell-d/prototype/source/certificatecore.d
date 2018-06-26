@@ -21,17 +21,15 @@ void captureKeypairSignature() {
         
     }
     
-    return null;
 }
 
 void secureCertificate() {
-    return null;
+
 }
 
 void generateCertificate() {
-    return null;
+
 }
 
 void pushCertificate() {
-    return null;
 }
