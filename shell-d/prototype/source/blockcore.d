@@ -29,25 +29,34 @@ string localBlockAddress;
 
 
 struct Block {
-   string Hash;
+   ubyte Hash;
    string blockHash;
    string Timestamp;
    string Nonce;
    string previousHash;   
 }
 
+uint genesisBlock() {
+    uint blockIndex;
+}
 
     string newBlock(string Hash, string previousHash, string Nonce, string Timestamp) {
 
-    import shelld.cryptocore;    
+       import shelld.cryptocore;    
 
-    string Hash         = this.Block.Hash ;         
-    string previousHash = this.Block.previousHash; 
-    string Nonce        = nonce;        
-    string Timestamp    = this.Block.Timestamp;
-    string blockHash    = this.Block.blockHash;
+       string Hash         = this.Block.Hash ;         
+       string previousHash = this.Block.previousHash; 
+       string Nonce        = nonce;        
+       string Timestamp    = this.Block.Timestamp;
+       string blockHash    = this.Block.blockHash;
      
-       return true;
+       
+       
+       bool blockStatus;
+       
+       return blockStatus;
+
+
     }
 
     auto includeBlock() {
@@ -64,17 +73,13 @@ struct Block {
         return true;
     }
 
+      
    
-
-   // Each block has its own root hash which is a way to another hashes combination
-   string rootHash;
-
-   
-    // Will use simple SHA-1 to generate the hash
+    // Will use generichash from cryptocore module, which is based on libsodium
     string generateHash() {
-        string Hash;  
+        ubyte Hash = crypto_generichash;  
 
-        return null;  
+        return Hash;  
 
     }
 

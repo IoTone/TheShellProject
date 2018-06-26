@@ -29,6 +29,7 @@ class AccountManager {
     unittest {
         AccountManager am = new AccountManager();
 
-        assert(am != null);
+        assert(am !is null);
     }
 }
+
