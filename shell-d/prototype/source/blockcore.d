@@ -50,7 +50,17 @@ struct Block {
        return true;
     }
 
-    void includeBlock() {
+    auto includeBlock() {
+        
+        bool blockIncluded;
+
+        if (!blockIncluded) {
+            writeln("Block could not be included, aborting the shell-d...");
+        } else {
+            newBlock();
+            writeln("Block created successfully, reaching next step...");
+        }
+
         return true;
     }
 

@@ -18,13 +18,17 @@ import deimos.sodium;
 // and all the states before that are not lost.
 
     string publicKey() {
-        return null;
-
+        
         string publicKey;
 
         // Puts the public key generated from the hash into a file
         // for further recovery
-        auto pushToFile = File("keypair", "w");
+        enum keypair_secret = "keypair_secret";
+        auto pushToFile = File(keypair_secret, "w");
+
+        bool keyPairStatus;
+
+        return publicKey;
     }
 
     string privateKey() {
