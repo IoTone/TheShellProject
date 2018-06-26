@@ -1,6 +1,0 @@
-__test__library__
-core
-librocksdb*
-.dub/
-test/
-dub.selections.json
