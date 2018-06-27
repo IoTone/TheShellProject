@@ -27,7 +27,7 @@ string localBlockStack;
 string localBlockAddress;
 **/
 
-
+/**
 struct Block {
    ubyte Hash;
    string blockHash;
@@ -38,17 +38,19 @@ struct Block {
 
 uint genesisBlock() {
     uint blockIndex;
+
+    return blockIndex;
 }
 
     string newBlock(string Hash, string previousHash, string Nonce, string Timestamp) {
 
        import shelld.cryptocore;    
 
-       string Hash         = this.Block.Hash ;         
-       string previousHash = this.Block.previousHash; 
+       string Hash         = Block.Hash ;         
+       string previousHash = Block.previousHash; 
        string Nonce        = nonce;        
-       string Timestamp    = this.Block.Timestamp;
-       string blockHash    = this.Block.blockHash;
+       string Timestamp    = Block.Timestamp;
+       string blockHash    = Block.blockHash;
      
        
        
@@ -130,7 +132,8 @@ uint genesisBlock() {
     unittest{
         Block ablock = new Block();
 
-        assert(ablock != null);
+        assert(ablock !is null);
     }
+**/
 
  
