@@ -37,7 +37,10 @@ class shelldb {
         auto jsondata = parseJSON("{}");
         if (!exists(SHELL_DB.dup)) {
             jsondata = parseJSON(datastr);
-            std.file.write(SHELL_DB, toJSON(jsondata)); // XXX Add exception handling
+            //
+            // XXX This is failing with gdc
+            //
+            // std.file.write(SHELL_DB, toJSON(jsondata)); // XXX Add exception handling
             writeln("SHELL_DB file does not exist, created, and loaded a dummy default ", datastr);
         } else {
             datastr = std.file.readText(SHELL_DB);
