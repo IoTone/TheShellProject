@@ -9,7 +9,7 @@ import std.stdio;
 import std.string;
 import std.file;
 import std.json;
-import rocksdb;
+// import rocksdb;
 
 //
 // XXX TODO: Fix this.  It doesn't work well
@@ -50,20 +50,20 @@ class shelldb {
         writeln("SHELL_DB read ", jsondata.toPrettyString());
         return jsondata;
     }
-
+/* 
     unittest {
         import std.conv : to;
         auto jsondata = shelldb.load_db();
         assert(!jsondata.isNull);
-        /*
-        writeln(jsondata.type);
+
+        // writeln(jsondata.type);
         // assert(jsondata.type == JSON_TYPE.OBJECT);
-        assert("crypto" in jsondata.object);
-        JSONValue jsondata2 = `{ "foo" : 1, "bar": 1, "crypto": 0, "cars": 1, "cats": -1}`;
-        shelldb.write_db(jsondata2);
-        jsondata = shelldb.load_db();
-        assert("cats" in jsondata);
-        */
+        // assert("crypto" in jsondata.object);
+        // JSONValue jsondata2 = `{ "foo" : 1, "bar": 1, "crypto": 0, "cars": 1, "cats": -1}`;
+        // shelldb.write_db(jsondata2);
+        // jsondata = shelldb.load_db();
+        // assert("cats" in jsondata);
+
         auto opts = new DBOptions;
         opts.createIfMissing = true;
         opts.errorIfExists = false;
@@ -96,5 +96,5 @@ class shelldb {
 
         // Close the database
         db.close();
-    }
+    } */
 }
