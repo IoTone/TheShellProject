@@ -8,14 +8,13 @@
 	"copyright": "Copyright 2018, IoTone, Inc.",
 	"license": "MIT",
 	"dependencies": {
-		"rocksdb": {
-			"path" : "./external/rocksdb-master",
-			"version": "0.0.7"
-		},
 		"sodium": "~>0.1.7",
 		"sodium:deimos": "~>0.1.7"
 	},
 	"preBuildCommands": ["echo Building the project"],
 	"copyFiles-windows-x86" : ["lib/*.dll"],
-	"copyFiles-windows-x86_64" : ["lib64/*.dll"]
+	"copyFiles-windows-x86_64" : ["lib64/*.dll"],
+	"lflags-posix" : [
+		"-L."
+	]
 }

@@ -1,7 +1,0 @@
-{
-	"fileVersion": 1,
-	"versions": {
-		"rocksdb": {"path":"external/rocksdb-master"},
-		"sodium": "0.1.7"
-	}
-}
