@@ -17,28 +17,38 @@ import deimos.sodium;
 // into a file, thus, further recovering is done once the app.d is re-run
 // and all the states before that are not lost.
 
-    string publicKey() {
+
+    bool keyPairStatus;
+
+    string keyPair;
+
+    string publicKey(string hash) {
         
         string publicKey;
 
-        // Puts the public key generated from the hash into a file
-        // for further recovery
-        enum keypair_secret = "keypair_secret";
-        auto pushToFile = File(keypair_secret, "w");
+        string hexData;
 
-        bool keyPairStatus;
+        string data;
+
+        string signature;
+        
+        
 
         return publicKey;
     }
 
     string privateKey() {
 
-        return null;
+        string privateKey;
+
+        return privateKey;
 
     }
 
     string generateKey() {
 
+        string keyAllocator;
+        
         return null;
 
     }

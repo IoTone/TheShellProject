@@ -53,7 +53,7 @@ The D language (dlang.org) plays such a special role in software engineering spa
 
 ### Design by Contract
 
-Notes...
+Through contracts, an application can have so many ways to achieves its purpose, having such an organized and profiled way to do so, relying on reusable steps
 
 ### Template Programming
 
