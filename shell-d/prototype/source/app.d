@@ -10,6 +10,7 @@ import shelld.addresscore;
 import shelld.blockcore;
 import shelld.consensuscore;
 import shelld.cryptocore;
+import shelld.keypair;
 import shelld.shellclient;
 import shelld.shellnode;
 
@@ -19,15 +20,19 @@ void main()
 {
 	writeln("Entry point for The Shell Blockchain.");
 	writeln("Starting to call block and address managers...");
-	writeln("Pushing a Hello World to the blockchain...", pushHelloWorld());
+	//writeln("Pushing a Hello World to the blockchain...", pushHelloWorld());
 	writeln("The local address is :");
-	writeln("Status of genesis block: ", genesisBlockStatus());
+	//writeln("Status of genesis block: ", genesisBlockStatus());
 	
-	int globalBlocksCounter;
-	writeln("Total global blocks created: ", globalBlocksCounter);
+	//int globalBlocksCounter;
+	//writeln("Total global blocks created: ", globalBlocksCounter);
+
+	writeln("Hash of actual address : ", );
+	writeln("Your keypair is: ", );
 
 }
 
+/**
 string pushHelloWorld() {
 	auto helloWorld_msg = `Hello World into the Blockchain \o/`;
 
@@ -48,3 +53,4 @@ void setLocalAddressToPeer() {
 bool genesisBlockStatus() {
 	return false;
 }
+**/

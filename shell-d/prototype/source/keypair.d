@@ -18,23 +18,22 @@ import deimos.sodium;
 // and all the states before that are not lost.
 
 
-    bool keyPairStatus;
-
     string keyPair;
 
-    string publicKey(string hash) {
+    string publicKey() {
         
-        string publicKey;
+        ubyte[8] hash;
+
+        randombytes_hash(hash.ptr, hash.length);
 
         string hexData;
 
         string data;
 
-        string signature;
-        
-        
+        string signature;   
+             
 
-        return publicKey;
+        return hash;
     }
 
     string privateKey() {
