@@ -21,9 +21,11 @@ unittest {
 
     // These tests handles the generation and verification of keypair
 
-    string keyPair;
+    ubyte[] pkBytes;
 
-    ubyte publicKey() {
+    string keyPair;
+    
+    ubyte[] publicKey() {
         
         assert(sodium_init != -1);
         ubyte[8] buf;
@@ -36,8 +38,8 @@ unittest {
 
         string signature;   
              
-
-        return buf;
+	pkBytes = buf;
+        return pkBytes;
     }
 
     string privateKey() {
