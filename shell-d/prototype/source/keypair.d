@@ -17,14 +17,18 @@ import deimos.sodium;
 // into a file, thus, further recovering is done once the app.d is re-run
 // and all the states before that are not lost.
 
+unittest {
+
+    // These tests handles the generation and verification of keypair
 
     string keyPair;
 
-    string publicKey() {
+    ubyte publicKey() {
         
-        ubyte[8] hash;
-
-        randombytes_hash(hash.ptr, hash.length);
+        assert(sodium_init != -1);
+        ubyte[8] buf;
+        if (buf.length <= 256) // limit, that linux guarantees by default, using getrandom(); figure can be higher with added True Random Number Generator
+		   randombytes_buf(buf.ptr, buf.length);
 
         string hexData;
 
@@ -33,7 +37,7 @@ import deimos.sodium;
         string signature;   
              
 
-        return hash;
+        return buf;
     }
 
     string privateKey() {
@@ -63,3 +67,4 @@ import deimos.sodium;
         return false;
     }
 
+}
