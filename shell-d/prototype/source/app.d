@@ -29,7 +29,7 @@ void main()
 
 	writeln("Hash of actual address : ", );
 	ubyte[8] pkBytes;
-	generateKey(pkBytes);
+	pkBytes = generateKey();
 	writeln("Your public keypair is: ", pkBytes);
 
 }
