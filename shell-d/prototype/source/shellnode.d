@@ -4,3 +4,5 @@
 #
 **/
 module shelld.shellnode;
+
+unittest {}

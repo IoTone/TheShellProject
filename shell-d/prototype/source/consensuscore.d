@@ -45,8 +45,5 @@ class Consensus {
 
     }
 
-    unittest
-    {
-        
-    }
+    unittest {}
 }

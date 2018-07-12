@@ -33,3 +33,5 @@ void generateCertificate() {
 
 void pushCertificate() {
 }
+
+unittest {}

@@ -14,9 +14,9 @@ struct Transaction_ {
 
 class Transaction {
 
-    unittest {
-        
-    }
-
+    
 }
+
+unittest {}
+
 
