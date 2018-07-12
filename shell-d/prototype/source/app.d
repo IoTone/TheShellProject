@@ -28,7 +28,9 @@ void main()
 	//writeln("Total global blocks created: ", globalBlocksCounter);
 
 	writeln("Hash of actual address : ", );
-	writeln("Your keypair is: ", );
+	ubyte[8] pkBytes;
+	generateKey(pkBytes);
+	writeln("Your public keypair is: ", pkBytes);
 
 }
 

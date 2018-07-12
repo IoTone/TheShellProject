@@ -21,41 +21,39 @@ unittest {
 
     // These tests handles the generation and verification of keypair
 
-    string keyPair;
+    ubyte[] pkBytes;
 
-    ubyte publicKey() {
-        
+    ubyte[] hexData;
+
+    ubyte[] data;
+
+    ubyte[] signature; 
+    
+    ubyte[] generateKey() {
+
         assert(sodium_init != -1);
-        ubyte[8] buf;
-        if (buf.length <= 256) // limit, that linux guarantees by default, using getrandom(); figure can be higher with added True Random Number Generator
-		   randombytes_buf(buf.ptr, buf.length);
-
-        string hexData;
-
-        string data;
-
-        string signature;   
+        ubyte[8] buf;            
              
+        pkBytes = buf;
 
-        return buf;
+        return pkBytes;
+
+    }    
+
+    /** ubyte[] publicKey() {
+        
+        
     }
+    **/
 
-    string privateKey() {
+    ubyte[] privateKey() {
 
-        string privateKey;
+        ubyte[] privateKey;
 
         return privateKey;
 
     }
-
-    string generateKey() {
-
-        string keyAllocator;
-        
-        return null;
-
-    }
-
+    
     bool verifyAddressKey() {
         bool addressKeyIsVerified = false;
         if (addressKeyIsVerified) {
