@@ -17,24 +17,24 @@ import deimos.sodium;
 // into a file, thus, further recovering is done once the app.d is re-run
 // and all the states before that are not lost.
 
-unittest {
+/**
+Some considerations on the steps to generate the hash
+//
+- Take pkBytes and convert it to hexadecimal;
+- Take the output and convert to a length, maybe 160 is fine
+- Apply the SHA-3 (Blake2b) from libsodium
+- Assign some data to verify its the correct associated entry with the keypair
+- Apply the hexData to it
+- Apply and verify through a signature to the keypair 
+
+**/
+
 
     // These tests handles the generation and verification of keypair
 
     ubyte[] pkBytes;
 
-<<<<<<< HEAD
     ubyte[] hexData;
-=======
-    string keyPair;
-    
-    ubyte[] publicKey() {
-        
-        assert(sodium_init != -1);
-        ubyte[8] buf;
-        if (buf.length <= 256) // limit, that linux guarantees by default, using getrandom(); figure can be higher with added True Random Number Generator
-		   randombytes_buf(buf.ptr, buf.length);
->>>>>>> cbae9bae244b258ff8b0a6b721838808856899ed
 
     ubyte[] data;
 
@@ -45,17 +45,22 @@ unittest {
         assert(sodium_init != -1);
         ubyte[8] buf;            
              
-<<<<<<< HEAD
         pkBytes = buf;
 
         return pkBytes;
-=======
-	pkBytes = buf;
-        return pkBytes;
-    }
->>>>>>> cbae9bae244b258ff8b0a6b721838808856899ed
 
     }    
+
+    ubyte[] generateHash() {
+        assert(crypto_hash_sha*_init() != -1);
+
+        crypto_hash_sha256_BYTES;
+        ubyte[] hash;
+        ubyte[] dataLength;
+        ubyte[] finalHashed;
+
+        return finalHashed;
+    }
 
     /** ubyte[] publicKey() {
         
@@ -82,4 +87,4 @@ unittest {
         return false;
     }
 
-}
+unittest {}
