@@ -29,11 +29,10 @@ string localBlockAddress;
 
 /**
 struct Block {
-   ubyte Hash;
-   string blockHash;
+   ubyte[] Hash;
    string Timestamp;
    string Nonce;
-   string previousHash;   
+   ubyte[] previousHash;   
 }
 
 uint genesisBlock() {
@@ -46,11 +45,11 @@ uint genesisBlock() {
 
        import shelld.cryptocore;    
 
-       string Hash         = Block.Hash ;         
-       string previousHash = Block.previousHash; 
+       ubyte[] Hash         = Block.Hash ;         
+       ubyte[] previousHash = Block.previousHash; 
        string Nonce        = nonce;        
        string Timestamp    = Block.Timestamp;
-       string blockHash    = Block.blockHash;
+       ubyte[] blockHash    = Block.blockHash;
      
        
        

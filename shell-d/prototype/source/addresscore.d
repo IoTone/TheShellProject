@@ -9,31 +9,45 @@ import std.stdio;
 import std.string;
 
 
-string addressHash;
+import shelld.accountcore;
+import shelld.cryptocore;
+import shelld.keypair;
+import shelld.persistence;
+
+
+ubyte[] addressHash;
+
+ubyte[] addressNetwork;
+
+ubyte[] accountHash;
 
 struct associatedBlock {
     
+
+}
+
+
+// Retrieve the KeyPair and generates the address 
+ubyte[] keyPairFetch() {
+
+
 }
 
 
 // Inserts the address into a pool struct for full block address stamping
 struct addressPool {
-     string addressHeader;
-     string addressOfNode;
+     ubyte[] addressHeader;
+     ubyte[] addressOfNode;
 }
 
 // Some infos about the pool of networking in which the address is integrating
 struct networkPool {
-     string address;
+     ubyte[] address;
 
 }
-
-
-
-class AddressCore {
     // AddressCore localAddress = new AddressCore();
 
-    string generateAddress() {
+    ubyte[] generateAddress() {
         return null;
     }
 
@@ -42,7 +56,16 @@ class AddressCore {
         return false;
     }
 
-}
+    auto setCheckSum() {
+        
+    }
+
+    // Persist all the states to the persistence layer
+    auto postAddressState() {
+
+    }
+
+
 
 // Check for the local address and sync with the broadcast index of adressess
 void checkAddressIndex() {
@@ -60,7 +83,7 @@ bool checkNetworkAddressBlock() {
 }
 
 unittest {
-        AddressCore obj = new AddressCore();
+        //AddressCore obj = new AddressCore();
 
         // assert(obj.generateAddress() !is null);
 }
