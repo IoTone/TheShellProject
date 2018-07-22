@@ -1,13 +1,11 @@
-# Status
+# Proto1 Status
 
 This release covered some basic functionality and concepts:
 
-- account concepts
-- public and private key pair generation
-- integration of persistence
-- integration of crypto api
-- minimal use of test
-
+- build setup
+- stub out modules
+- stub out use of unittest
+- Milestone 1: https://github.com/IoTone/TheShellProject/milestone/1?closed=1
 ## Review
 
 Minimal code review performed, very little testing, not sure if this compiles even
