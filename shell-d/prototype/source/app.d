@@ -30,6 +30,8 @@ void main()
 	writeln("Hash of actual address : ", );
 	ubyte[8] pkBytes;
 	pkBytes = generateKey();
+	uchar[] genHash;
+	genHash = generateHash();
 	writeln("Your public keypair is: ", pkBytes);
 
 }

@@ -58,9 +58,13 @@ Some considerations on the steps to generate the hash
         // crypto_hash_sha256_BYTES;
         ubyte[] hash;
         ubyte[] dataLength;
-        ubyte[] finalHashed;
+        uchar[] generalHash;
 
-        return finalHashed;
+        uchar generalHash[crypto_generichash_BYTES];
+
+        crypto_generichash(generalHash, sizeof generalHash, NULL, 0);
+
+        return generalHash;
     }
 
     /** ubyte[] publicKey() {
