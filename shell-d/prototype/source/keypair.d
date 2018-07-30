@@ -52,10 +52,16 @@ Some considerations on the steps to generate the hash
     }    
 
     ubyte[] generateHash() {
-        assert(crypto_hash_sha*_init() != -1);
+        // What is crypto_hash_sha_init?
+        // assert(crypto_hash_sha_init() != -1);
 
+<<<<<<< HEAD
         hash[crypto_hash_sha256_BYTES];
         //ubyte[] hash;
+=======
+        // crypto_hash_sha256_BYTES;
+        ubyte[] hash;
+>>>>>>> 287003197877fbcdd76e4489b28caf9abccb3e76
         ubyte[] dataLength;
         ubyte[] finalHashed;
 

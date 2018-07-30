@@ -29,8 +29,7 @@ struct associatedBlock {
 
 // Retrieve the KeyPair and generates the address 
 ubyte[] keyPairFetch() {
-
-
+    return null;
 }
 
 
