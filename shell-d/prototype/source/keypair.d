@@ -54,8 +54,8 @@ Some considerations on the steps to generate the hash
     ubyte[] generateHash() {
         assert(crypto_hash_sha*_init() != -1);
 
-        crypto_hash_sha256_BYTES;
-        ubyte[] hash;
+        hash[crypto_hash_sha256_BYTES];
+        //ubyte[] hash;
         ubyte[] dataLength;
         ubyte[] finalHashed;
 

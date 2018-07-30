@@ -65,6 +65,10 @@ struct networkPool {
 
     }
 
+    auto offlineAddress() {
+
+    }
+
 
 
 // Check for the local address and sync with the broadcast index of adressess
