@@ -62,7 +62,7 @@ Some considerations on the steps to generate the hash
 
         uchar generalHash[crypto_generichash_BYTES];
 
-        crypto_generichash(generalHash, sizeof generalHash, NULL, 0);
+        crypto_generichash(generalHash, generalHash.sizeof, null, 0);
 
         return generalHash;
     }

@@ -33,6 +33,7 @@ void main()
 	uchar[] genHash;
 	genHash = generateHash();
 	writeln("Your public keypair is: ", pkBytes);
+	writeln("Hashed public key: ", genHash);
 
 }
 
