@@ -58,9 +58,8 @@ Some considerations on the steps to generate the hash
         // crypto_hash_sha256_BYTES;
         ubyte[] hash;
         ubyte[] dataLength;
-        uchar[] generalHash;
-
-        uchar generalHash[crypto_generichash_BYTES];
+        
+        ubyte[] [crypto_generichash_BYTES] generalHash;
 
         crypto_generichash(generalHash, generalHash.sizeof, null, 0);
 
