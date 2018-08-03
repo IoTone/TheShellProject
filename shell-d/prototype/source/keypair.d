@@ -52,9 +52,9 @@ Some considerations on the steps to generate the hash
 
     }    
 
-<<<<<<< HEAD
     string convertToHex() {
         
+        /*
         ubyte[] publicKey;
         
         publicKey = generateKey();
@@ -66,14 +66,12 @@ Some considerations on the steps to generate the hash
         auto finalHex = hexString!(keyToHex);
 
         return finalHex;
-
+        */
+        return null;
     }
 
-    /*
-    ubyte[] generateHash() {
-=======
+
     ubyte[] generateHash(ubyte[] datain, ubyte[] key) {
->>>>>>> b6419a99bd7378368575efb93ed158cc4c5318b5
         // What is crypto_hash_sha_init?
         // assert(crypto_hash_sha_init() != -1);
 
@@ -82,15 +80,12 @@ Some considerations on the steps to generate the hash
         ubyte[] dataLength;
 
         ubyte[8] buf;
-        ubyte[] generateHash;
 
        // generateHash = buf;
         
-<<<<<<< HEAD
         //ubyte[] [crypto_generichash_BYTES] generalHash;
 
         //crypto_generichash(generalHash.ptr, generalHash.length);
-=======
         ubyte[] generalHash;
         generalHash = new ubyte[crypto_generichash_BYTES];
 
@@ -109,9 +104,8 @@ Some considerations on the steps to generate the hash
                            datain.length,
                            key.ptr,
                            key.length);
->>>>>>> b6419a99bd7378368575efb93ed158cc4c5318b5
 
-        //return generalHash;
+        return generalHash;
     }
 
     /** ubyte[] publicKey() {
