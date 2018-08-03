@@ -8,6 +8,11 @@ module shelld.keypair;
 
 import std.stdio;
 import std.conv;
+import std.string;
+import std.array: array;
+import std.range: chunks;
+import std.algorithm: map;
+
 import shelld.addresscore;
 // import shelld.blockcore;
 import shelld.cryptocore;
@@ -52,22 +57,56 @@ Some considerations on the steps to generate the hash
 
     }    
 
-    string convertToHex() {
-        
-        /*
-        ubyte[] publicKey;
-        
-        publicKey = generateKey();
+    /**
+     *
+     *
+    */
+    ubyte[] convertHexStringToUbytes(in string datain) {
+        // This works also: immutable hexNum = cast(immutable(ubyte)[])x"16D81B16E091F31BEF";
+        // also this: // conversion at compile time
+        // auto string1 = hexString!"304A314B";
+        ubyte[] hexnumbytes = datain /* "16D8..." */
+        .chunks(2) /* "16", "D8", ... */
+        .map!(twoDigits => twoDigits.parse!ubyte(16)) /* 0x16, 0xD8, */
+        .array();
 
-        string keyToHex;
+        return hexnumbytes;
+    }
+    
+    /**
+     * convertAsciiStringToHexString - use a regular ascii string as input
+     * 
+     */
+    string convertAsciiStringToHexString(in string datain) {
+        // TODO: add error handling
+        return datain.format!("%(%02X%)");
+    }
 
-        auto keyToHex = to!string(publicKey);
+    /**
+     * convertToHex - takes ubyte array and converts to hexidecimal representation
+     *
+     */
+    string convertUbytesToHexString(in ubyte[] datain) {
+        // immutable(ubyte)[] b = a.representation;
+        // string c = b.assumeUTF;
+
+        // ubyte[] publicKey;
         
-        auto finalHex = hexString!(keyToHex);
+        // publicKey = generateKey();
 
-        return finalHex;
-        */
-        return null;
+        // string keyToHex;
+
+        // auto keyToHex = to!string(publicKey);
+        
+        // auto hexdata = hexString!(keyToHex);
+
+        // Some example ways to do conversions
+        // 
+        // format("%.2x", dat[i])
+        
+        // TODO: Add some error handling
+
+        return convertAsciiStringToHexString(datain.assumeUTF);
     }
 
 
