@@ -59,7 +59,8 @@ Some considerations on the steps to generate the hash
         ubyte[] hash;
         ubyte[] dataLength;
         
-        ubyte [crypto_generichash_BYTES] generalHash;
+        ubyte[] generalHash;
+        generalHash = new ubyte[crypto_generichash_BYTES];
 
         /* deimos.sodium.crypto_generichash.crypto_generichash 
             (ubyte* out_, 
