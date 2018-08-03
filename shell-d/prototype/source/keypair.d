@@ -51,7 +51,7 @@ Some considerations on the steps to generate the hash
 
     }    
 
-    ubyte[] generateHash() {
+    ubyte[] generateHash(ubyte[] datain, ubyte[] key) {
         // What is crypto_hash_sha_init?
         // assert(crypto_hash_sha_init() != -1);
 
@@ -59,9 +59,23 @@ Some considerations on the steps to generate the hash
         ubyte[] hash;
         ubyte[] dataLength;
         
-        ubyte[] [crypto_generichash_BYTES] generalHash;
+        ubyte [crypto_generichash_BYTES] generalHash;
 
-        crypto_generichash(generalHash, generalHash.sizeof, null, 0);
+        /* deimos.sodium.crypto_generichash.crypto_generichash 
+            (ubyte* out_, 
+            ulong outlen, 
+            const(ubyte)* in_, 
+            ulong inlen, 
+            const(ubyte)* key, 
+            ulong keylen)
+        */
+        // (ubyte[]*, ulong, ubyte*, ulong, ubyte*, ulong)
+        crypto_generichash(generalHash.ptr,
+                           generalHash.length,
+                           datain.ptr,
+                           datain.length,
+                           key.ptr,
+                           key.length);
 
         return generalHash;
     }
