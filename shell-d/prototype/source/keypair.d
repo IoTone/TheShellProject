@@ -7,6 +7,7 @@
 module shelld.keypair;
 
 import std.stdio;
+import std.conv;
 import shelld.addresscore;
 // import shelld.blockcore;
 import shelld.cryptocore;
@@ -22,7 +23,7 @@ Some considerations on the steps to generate the hash
 //
 - Take pkBytes and convert it to hexadecimal;
 - Take the output and convert to a length, maybe 160 is fine
-- Apply the SHA-3 (Blake2b) from libsodium
+- Apply the SHA-2 (Blake2b) from libsodium
 - Assign some data to verify its the correct associated entry with the keypair
 - Apply the hexData to it
 - Apply and verify through a signature to the keypair 
@@ -51,6 +52,23 @@ Some considerations on the steps to generate the hash
 
     }    
 
+    string convertToHex() {
+        
+        ubyte[] publicKey;
+        
+        publicKey = generateKey();
+
+        string keyToHex;
+
+        auto keyToHex = to!string(publicKey);
+        
+        auto finalHex = hexString!(keyToHex);
+
+        return finalHex;
+
+    }
+
+    /*
     ubyte[] generateHash() {
         // What is crypto_hash_sha_init?
         // assert(crypto_hash_sha_init() != -1);
@@ -58,12 +76,17 @@ Some considerations on the steps to generate the hash
         // crypto_hash_sha256_BYTES;
         ubyte[] hash;
         ubyte[] dataLength;
+
+        ubyte[8] buf;
+        ubyte[] generateHash;
+
+       // generateHash = buf;
         
-        ubyte[] [crypto_generichash_BYTES] generalHash;
+        //ubyte[] [crypto_generichash_BYTES] generalHash;
 
-        crypto_generichash(generalHash, generalHash.sizeof, null, 0);
+        //crypto_generichash(generalHash.ptr, generalHash.length);
 
-        return generalHash;
+        //return generalHash;
     }
 
     /** ubyte[] publicKey() {
