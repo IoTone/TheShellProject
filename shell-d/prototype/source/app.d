@@ -5,6 +5,7 @@
 **/
 
 import std.stdio;
+import std.conv;
 import shelld.accountcore;
 import shelld.addresscore;
 import shelld.blockcore;
@@ -30,8 +31,11 @@ void main()
 	writeln("Hash of actual address : ", );
 	ubyte[8] pkBytes;
 	pkBytes = generateKey();
-	uchar[] genHash;
-	genHash = generateHash();
+	// keypair.generateHash() returns ubyte[]
+	ubyte[] genHash;
+	// ubyte[] generateHash(ubyte[] datain, ubyte[] key) 
+	ubyte[] datain = to!(ubyte[]) ("NachoCheese");
+	genHash = generateHash(datain, pkBytes);
 	writeln("Your public keypair is: ", pkBytes);
 	writeln("Hashed public key: ", genHash);
 
