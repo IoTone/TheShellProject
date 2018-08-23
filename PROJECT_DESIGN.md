@@ -4,59 +4,63 @@ This document represents all the aims and architectural vision of The Shell Proj
 
 ## Index
 
-* I - Introduction;
-* II - Cryptography;
-* III - Address;
-* IV - Accounts:
-* V - Persistence;
-* VI - Networking
-* VII - Transactions
-* Appendix A - Here we put some other additional info concerning general architecture
-* Appendix B - Algorithms & data structures
-* Appendix C - Libraries & 3rd party API's
-* Appendix D - General concerns
+<!-- MarkdownTOC depth=4 autolink=true bracket=round list_bullets="-*+" -->
+
+- [Introduction](#introduction)
+- [Cryptography](#cryptography);
+- [Address](#address)
+- [Accounts](#accounts)
+- [Persistence](#persistence)
+- [Networking](#networking)
+- [Transactions](#transactions)
+- [Appendix A - general architecture](#appendixa)
+- [Appendix B - Algorithms & data structures](#appendixb)
+- [Appendix C - Libraries & 3rd party API's](#appendixc)
+- [Appendix D - General concerns](#appendixd)
+
+<!-- /MarkdownTOC -->
 
 
-### Introduction
-
-TODO ...
-
-### Cryotography
-
-TODO ...
-
-### Address
+# Introduction
 
 TODO ...
 
-### Accounts
+# Cryotography
 
 TODO ...
 
-### Persistence
+# Address
 
 TODO ...
 
-### Networking
+# Accounts
 
 TODO ...
 
-### Transactions
+# Persistence
 
 TODO ...
 
-### Appendix A - 
+# Networking
+
+TODO ...
+
+# Transactions
+
+TODO ...
+
+# Appendix A - General architecture
 
 Here we put some other additional info concerning general architecture
 
 TODO ...
 
-### Appendix B - Algorithms & data structures
+# Appendix B - Algorithms & data structures
 
 TODO ...
 
-### Appendix C - Libraries & 3rd party API's
+# Appendix C - Libraries & 3rd party API's
 
 TODO ...
 
-### Appendix D - General concerns
+# Appendix D - General concerns
