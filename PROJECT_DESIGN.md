@@ -13,10 +13,10 @@ This document represents all the aims and architectural vision of The Shell Proj
 - [Persistence](#persistence)
 - [Networking](#networking)
 - [Transactions](#transactions)
-- [Appendix A - General architecture](#appendixa)
-- [Appendix B - Algorithms & data structures](#appendixb)
-- [Appendix C - Libraries & 3rd party API's](#appendixc)
-- [Appendix D - General concerns](#appendixd)
+- [Appendix A - General architecture](#appendixa-general-architecture)
+- [Appendix B - Algorithms and data structures](#appendixb-algorithms-and-data-structures)
+- [Appendix C - Libraries and 3rd party API's](#appendixc-libraries-and-3rd-party-api's)
+- [Appendix D - General concerns](#appendixd-general-concerns)
 
 <!-- /MarkdownTOC -->
 
