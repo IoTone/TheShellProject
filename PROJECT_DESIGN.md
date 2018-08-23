@@ -13,7 +13,7 @@ This document represents all the aims and architectural vision of The Shell Proj
 - [Persistence](#persistence)
 - [Networking](#networking)
 - [Transactions](#transactions)
-- [Appendix A - general architecture](#appendixa)
+- [Appendix A - General architecture](#appendixa)
 - [Appendix B - Algorithms & data structures](#appendixb)
 - [Appendix C - Libraries & 3rd party API's](#appendixc)
 - [Appendix D - General concerns](#appendixd)
@@ -21,46 +21,46 @@ This document represents all the aims and architectural vision of The Shell Proj
 <!-- /MarkdownTOC -->
 
 
-# Introduction
+## Introduction
 
 TODO ...
 
-# Cryotography
+## Cryptography
 
 TODO ...
 
-# Address
+## Address
 
 TODO ...
 
-# Accounts
+## Accounts
 
 TODO ...
 
-# Persistence
+## Persistence
 
 TODO ...
 
-# Networking
+## Networking
 
 TODO ...
 
-# Transactions
+## Transactions
 
 TODO ...
 
-# Appendix A - General architecture
+## Appendix A - General architecture
 
 Here we put some other additional info concerning general architecture
 
 TODO ...
 
-# Appendix B - Algorithms & data structures
+## Appendix B - Algorithms & data structures
 
 TODO ...
 
-# Appendix C - Libraries & 3rd party API's
+## Appendix C - Libraries & 3rd party API's
 
 TODO ...
 
-# Appendix D - General concerns
+## Appendix D - General concerns
