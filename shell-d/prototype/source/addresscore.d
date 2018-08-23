@@ -46,9 +46,26 @@ struct networkPool {
 }
     // AddressCore localAddress = new AddressCore();
 
-    ubyte[] generateAddress() {
-        return null;
+    ubyte[] generateAddress(ubyte[] address) {
+
+        auto hashedKey = address;
+
+        return hashedKey;
     }
+
+    // Persist to dddb the address generated
+    auto postAddress() {
+
+        ubyte[] publicAddress;
+        // Some cast here will show necessary
+         generateAddress(publicAddress);
+
+        foreach (key, value; ) {
+
+        }
+
+    }
+
 
     // Returns status about the status of the hits for the broadcast over the network
     bool BroadcastStatus() {
@@ -64,6 +81,8 @@ struct networkPool {
 
     }
 
+    
+    
 
 
 // Check for the local address and sync with the broadcast index of adressess

@@ -52,14 +52,13 @@ Some considerations on the steps to generate the hash
 
     }    
 
-<<<<<<< HEAD
+    /*
+    
     string convertToHex() {
         
         ubyte[] publicKey;
         
         publicKey = generateKey();
-
-        string keyToHex;
 
         auto keyToHex = to!string(publicKey);
         
@@ -69,11 +68,10 @@ Some considerations on the steps to generate the hash
 
     }
 
-    /*
+    */
+
+    
     ubyte[] generateHash() {
-=======
-    ubyte[] generateHash(ubyte[] datain, ubyte[] key) {
->>>>>>> b6419a99bd7378368575efb93ed158cc4c5318b5
         // What is crypto_hash_sha_init?
         // assert(crypto_hash_sha_init() != -1);
 
@@ -86,34 +84,14 @@ Some considerations on the steps to generate the hash
 
        // generateHash = buf;
         
-<<<<<<< HEAD
         //ubyte[] [crypto_generichash_BYTES] generalHash;
 
         //crypto_generichash(generalHash.ptr, generalHash.length);
-=======
-        ubyte[] generalHash;
-        generalHash = new ubyte[crypto_generichash_BYTES];
-
-        /* deimos.sodium.crypto_generichash.crypto_generichash 
-            (ubyte* out_, 
-            ulong outlen, 
-            const(ubyte)* in_, 
-            ulong inlen, 
-            const(ubyte)* key, 
-            ulong keylen)
-        */
-        // (ubyte[]*, ulong, ubyte*, ulong, ubyte*, ulong)
-        crypto_generichash(generalHash.ptr,
-                           generalHash.length,
-                           datain.ptr,
-                           datain.length,
-                           key.ptr,
-                           key.length);
->>>>>>> b6419a99bd7378368575efb93ed158cc4c5318b5
 
         //return generalHash;
     }
 
+   
     /** ubyte[] publicKey() {
         
         
