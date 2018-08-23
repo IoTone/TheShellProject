@@ -7,7 +7,7 @@ This document represents all the aims and architectural vision of The Shell Proj
 <!-- MarkdownTOC depth=4 autolink=true bracket=round list_bullets="-*+" -->
 
 - [Introduction](#introduction)
-- [Cryptography](#cryptography);
+- [Cryptography](#cryptography)
 - [Address](#address)
 - [Accounts](#accounts)
 - [Persistence](#persistence)
