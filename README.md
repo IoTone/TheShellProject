@@ -2,13 +2,13 @@
 
 The Shell Project: The Shell Project (working name) aims to build a viable general purpose blockchain, with attributes of security, ease of deployment, clear specification, ease of use for DAPPs, and multiple implementation interop.  Since the focus is on generalized use cases, not specifically cryptocurrency, it becomes possible for others to adapt this to their own use cases.  The goal is to keep this project pure OSS, although it is associated with a business entity.  We don't care who uses it, forks it, distributes it.  And we don't intend to file patents on anything that has the intent of requiring commercial licensing or targetted patent trolling.  The first implemetnation would be in [Dlang](https://dlang.org).  We will be working with another developer to ensure at least one other blockchain implementation is built in Java.
 
-## References
-
-- Shells were used as an original currency and value store for early civilizations around the world, primarily in coastal regions.  In particular, indigenous people of North America used shells along the Pacific coast. https://en.wikipedia.org/wiki/Shell_money
-
 ## Why create The Shell Project
 
 Why not.  Coding is an art as much as it is a passion, and embodies a multidisciplinary set of skills.  Cryptocurrency combines many disciplines of computer science, mathematics, and economics.  Blockchain is a realization of an approach to public key infrastructure and distributed work.  We believe the industry needs something not backed by the IBMs of the world, but backed by small companies that seek to support one another in growing the net blockchain economy, freely.  We want to build this first in Dlang because we like working in Dlang as opposed to simply forking someone else's C++ code.   We respect the hard work of others, and will provide attribution where we borrow concepts, site others' work, and generally stand on the backs of giants.
+
+## References
+
+- Shells were used as an original currency and value store for early civilizations around the world, primarily in coastal regions.  In particular, indigenous people of North America used shells along the Pacific coast. https://en.wikipedia.org/wiki/Shell_money
 
 ### Why not fork Bitcoin?
 
@@ -38,14 +38,6 @@ From Pedro:
 6. Consensus achievement and possible "race conditions" that could be involved;
 7. Design of simple business logics that could be run into the transaction blocks
 
-## TODO
-
-- Initial commits
-- Project plan
-- A white paper
-- Perform experimental (but very simple) transactions to validate the prototype
-- Find some additional contributors
-- Define model and micro-transaction architecture for the blockchain
 
 ## General Notes
 
@@ -81,18 +73,39 @@ Notes...
 
 This undoubtly extends the potential of a general purpose blockchain to not only multiple platforms but other device types, providing a fertile field to explore Internet of Things (IoT) scenarios into the blockchain ecosystem, and possibly find other use cases in other industries and academic research.
 
-## Future benchmarks with other platforms
-
-TODO
-
 ## Attributions
 
 - Bitcoin: Wow! Not much to say more than thank you.  Bitcoin fuels our ideas, funds our dreams, and inspires our desire to build.
 - NEM: We are borrowing a lot of great ideas from the NEM white paper.  We wish the entire NEM stack was open source.
 - Ethereum: Bowing to the future king, Ethereum is changing how the finance industry thinks about their own fragile existence.
+- EOS: EOS Project and it's huge ecosystem of features and ambitious goals to achieve the fastest and reliable blockchain, as well being a great chance in how decentralized applications should be architected and runned, producing a novel start to future developments.
+
+## Future benchmarks with other platforms
+
+As blockachains applications represents new flavors when comes about the distributed and decentralized nature of systems, relying on benchmarkings to determine which one is the best for particular cases surely seems to be something compeling a no brainer task. Rather than that, comparing implementantions, algorithms and data structures, as well cryptographyc proofs in transactions against diverse scenarios, with well pointed measures and parameters
+
+The following table resumes a little of what is aimed in terms of benchmarking with other blockchain implementations, to, in more general means, collect progressive information allowing continuous improvements, while keeping the core dry and concise.
+
+| Criteria | Parameter |
+|----------|-----------|
+| Performance |        |
+| Transaction |        |
+| Cryptographyic Proof |           |
+| Networking |         |
+|----------------------|----------|             
 
 ## Contributions
 
 @pedroalvesbatista
 
 For what we know, this is the first project from ground up made 100% in Brazil. '-'
+
+## TODO
+
+- Initial commits
+- Project plan
+- A white paper
+- Perform experimental (but very simple) transactions to validate the prototype
+- Find some additional contributors
+- Define model and micro-transaction architecture for the blockchain
+- Define final specs for experiments in simple cases
