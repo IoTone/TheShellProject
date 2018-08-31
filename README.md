@@ -82,17 +82,22 @@ This undoubtly extends the potential of a general purpose blockchain to not only
 
 ## Future benchmarks with other platforms
 
-As blockachains applications represents new flavors when comes about the distributed and decentralized nature of systems, relying on benchmarkings to determine which one is the best for particular cases surely seems to be something compeling a no brainer task. Rather than that, comparing implementantions, algorithms and data structures, as well cryptographyc proofs in transactions against diverse scenarios, with well pointed measures and parameters
+As blockachains applications represents new flavors when comes about the distributed and decentralized nature of systems, relying on benchmarkings to determine which one is the best for particular cases surely seems to be something compeling a no brainer task. Rather than that, comparing implementantions, algorithms and data structures, as well cryptographic proofs in transactions against diverse scenarios, with well pointed measures and parameters
 
 The following table resumes a little of what is aimed in terms of benchmarking with other blockchain implementations, to, in more general means, collect progressive information allowing continuous improvements, while keeping the core dry and concise.
 
-| Criteria | Parameter |
-|----------|-----------|
-| Performance |        |
-| Transaction |        |
-| Cryptographyic Proof |           |
-| Networking |         |
-|----------------------|----------|             
+So far as we can notice, Hyperledger Project has in its umbrella a framework called [Calliper](https://github.com/hyperledger/caliper), which aims "to measure performance of multiple blockchain solutions", so, maybe this is the most known solution for running benchmark in blockchain solutions. 
+
+Note : We do not intend to copy and past the Calliper way of doing benchmark, but, some ideas or features would 
+deserve some cherrypicking, if the license allow us to borrow some of it.
+
+| Criteria             | Parameter |
+|----------------------|-----------|
+| Performance          |           |
+| Transaction          |           |
+| Cryptographic Proof  |           |
+| Networking           |           |
+
 
 ## Contributions
 
