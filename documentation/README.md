@@ -11,3 +11,7 @@ Some common conventions used by D programmers and developers, or, the so called 
 ### Project Design
 
  This is a preparation for the future technical white paper, containing all the necessary steps (libraries, algorithms, materials and references) to make The Shell Project take off.
+
+ #### Project Status (directory)
+
+ Every phase of the project we put in separate documents, describing everything we've accomplished, as well all issues and dificulties.
