@@ -4,7 +4,7 @@ This section contains all the documentation regarding The Shell Project.
 
 The documentation is structured in the following sections :
 
-###Developer Convention 
+### Developer Convention 
 
 Some common conventions used by D programmers and developers, or, the so called "D way", is put here to guide newcomers (even new D programmers can benefit from this, we think).
 
