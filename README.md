@@ -29,7 +29,6 @@ Tons of great use cases here: https://medium.com/swlh/blockchain-benefits-use-ca
 
 ## Design
 
-From Pedro:
 1. Simple block generation and verification;
 2. Node addition and recognizing;
 3. Simple consensus of which operations was really performed into the blocks;
@@ -39,7 +38,7 @@ From Pedro:
 7. Design of simple business logics that could be run into the transaction blocks
 
 
-## General Notes
+## First thing first: What makes D a good fit for this endeavor ?
 
 [The D programming language](https://dlang.org) plays such a special role in software engineering space, providing amazing features for the purpose of saving lots of hours of work and empowering developers and engineers with awesomeness, just for the sake of simplicity and sanity. Some Dlang features apreciated in this project are noted below.
 
