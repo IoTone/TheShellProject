@@ -42,35 +42,9 @@ Tons of great use cases here: https://medium.com/swlh/blockchain-benefits-use-ca
 
 [The D programming language](https://dlang.org) plays such a special role in software engineering space, providing amazing features for the purpose of saving lots of hours of work and empowering developers and engineers with awesomeness, just for the sake of simplicity and sanity. Some Dlang features apreciated in this project are noted below.
 
-### Design by Contract
+In the documentation directory, the Why D section explains why using D can be provide such a reliable and full-batery blockchain implementation concerning a lot of requirements.
 
-Contracts are the concept of preconditions and postconditions for function calls, and invariants for data types. Contracts are yet another way of allowing an application correctly achieve its purpose.
 
-### Template programming
-
-Notes...
-
-### Metaprogramming
-
-Notes...
-
-### Fast compilation
-
-Notes...
-
-### Good readability
-
-Notes...
-
-### Code efficiency
-
-Everyone wants efficiency in whatever they do, at least comprising people who cares about the impact of their work. Programmers and engineers, as almost all those involved in IT or general technology field, appreciate efficiency in a way a lot of effort can be saved, letting them to redirect wasted time to other tasks
-
-### Multiple platforms at once
-
-Notes...
-
-This undoubtly extends the potential of a general purpose blockchain to not only multiple platforms but other device types, providing a fertile field to explore Internet of Things (IoT) scenarios into the blockchain ecosystem, and possibly find other use cases in other industries and academic research.
 
 ## Attributions
 
