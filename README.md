@@ -64,7 +64,7 @@ Notes...
 
 ### Code efficiency
 
-Notes...
+Everyone wants efficiency in whatever they do, at least comprising people who cares about the impact of their work. Programmers and engineers, as almost all those involved in IT or general technology field, appreciate efficiency in a way a lot of effort can be saved, letting them to redirect wasted time to other tasks
 
 ### Multiple platforms at once
 
