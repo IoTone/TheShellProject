@@ -99,8 +99,8 @@ class shelldb {
         db.close();
     } */
 
-    unittest {
-auto db = new ddb("yes.db");
+unittest {
+    auto db = new ddb("yes.db");
     
 
     // set multiple values to social_networks

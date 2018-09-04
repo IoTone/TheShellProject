@@ -55,9 +55,18 @@ Here we put some other additional info concerning general architecture
 
 TODO ...
 
-## Appendix B - Algorithms & data structures
+## Appendix B - Algorithms & Data structures
 
-TODO ...
+For generating keypairs
+
+ubyte[8] keyData;
+
+var keypair;
+var hash;
+
+
+
+
 
 ## Appendix C - Libraries & 3rd party API's
 

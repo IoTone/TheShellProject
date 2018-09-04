@@ -20,7 +20,7 @@ It appears the forces behind Bytecoin believe in OSS as a marketing tool, but le
 
 ### Why not just use an ECR20 Token
 
-TODO
+The idea of token contracts has blasted the world with new possibilities, opening an almost unthinkable set of new formats in which we can split trust, business models, as well "freedom formats", where to spot any kind of assets. Contract execution and tokens aren't brand new, but the how Ethereum and ECR20 token interfaces with the outside world , undoubtely constitutes game changers. 
 
 ## Use Cases
 
