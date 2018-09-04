@@ -57,58 +57,15 @@ Some considerations on the steps to generate the hash
 
     }    
 
-<<<<<<< HEAD
     /*
     
     string convertToHex() {
         
         ubyte[] publicKey;
-=======
-    /**
-     *
-     *
-    */
-    ubyte[] convertHexStringToUbytes(in string datain) {
-        // This works also: immutable hexNum = cast(immutable(ubyte)[])x"16D81B16E091F31BEF";
-        // also this: // conversion at compile time
-        // auto string1 = hexString!"304A314B";
-        ubyte[] hexnumbytes = datain /* "16D8..." */
-        .chunks(2) /* "16", "D8", ... */
-        .map!(twoDigits => twoDigits.parse!ubyte(16)) /* 0x16, 0xD8, */
-        .array();
-
-        return hexnumbytes;
-    }
-    
-    /**
-     * convertAsciiStringToHexString - use a regular ascii string as input
-     * 
-     */
-    string convertAsciiStringToHexString(in string datain) {
-        // TODO: add error handling
-        return datain.format!("%(%02X%)");
-    }
-
-    /**
-     * convertToHex - takes ubyte array and converts to hexidecimal representation
-     *
-     */
-    string convertUbytesToHexString(in ubyte[] datain) {
-        // immutable(ubyte)[] b = a.representation;
-        // string c = b.assumeUTF;
-
-        // ubyte[] publicKey;
->>>>>>> b47a5eed33c82fbe465309f080c529194dd6e1f7
         
         // publicKey = generateKey();
 
-<<<<<<< HEAD
         auto keyToHex = to!string(publicKey);
-=======
-        // string keyToHex;
-
-        // auto keyToHex = to!string(publicKey);
->>>>>>> b47a5eed33c82fbe465309f080c529194dd6e1f7
         
         // auto hexdata = hexString!(keyToHex);
 
@@ -121,15 +78,10 @@ Some considerations on the steps to generate the hash
         return convertAsciiStringToHexString(datain.assumeUTF);
     }
 
-<<<<<<< HEAD
     */
 
     
     ubyte[] generateHash() {
-=======
-
-    ubyte[] generateHash(ubyte[] datain, ubyte[] key) {
->>>>>>> b47a5eed33c82fbe465309f080c529194dd6e1f7
         // What is crypto_hash_sha_init?
         // assert(crypto_hash_sha_init() != -1);
 
@@ -144,27 +96,6 @@ Some considerations on the steps to generate the hash
         //ubyte[] [crypto_generichash_BYTES] generalHash;
 
         //crypto_generichash(generalHash.ptr, generalHash.length);
-<<<<<<< HEAD
-=======
-        ubyte[] generalHash;
-        generalHash = new ubyte[crypto_generichash_BYTES];
-
-        /* deimos.sodium.crypto_generichash.crypto_generichash 
-            (ubyte* out_, 
-            ulong outlen, 
-            const(ubyte)* in_, 
-            ulong inlen, 
-            const(ubyte)* key, 
-            ulong keylen)
-        */
-        // (ubyte[]*, ulong, ubyte*, ulong, ubyte*, ulong)
-        crypto_generichash(generalHash.ptr,
-                           generalHash.length,
-                           datain.ptr,
-                           datain.length,
-                           key.ptr,
-                           key.length);
->>>>>>> b47a5eed33c82fbe465309f080c529194dd6e1f7
 
         return generalHash;
     }
@@ -195,4 +126,18 @@ Some considerations on the steps to generate the hash
         return false;
     }
 
-unittest {}
+unittest {
+
+    ubyte[] keypair;
+    generateHash(keypair);
+    auto response = keypair;
+    writeln("Generated keypair: ");
+    assert(response == ubyte[]);
+    assert(response == "");
+
+    ubyte[] genericHash;
+    writeln("Applied generic hash:");
+    auto response = genericHash;
+    assert(response == "");
+    
+}
