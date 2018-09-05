@@ -60,9 +60,11 @@ struct networkPool {
         // Some cast here will show necessary
          generateAddress(publicAddress);
 
+        /*
         foreach (key, value; ) {
 
         }
+        */
 
     }
 
