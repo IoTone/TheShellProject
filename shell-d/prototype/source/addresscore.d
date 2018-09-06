@@ -46,23 +46,26 @@ struct networkPool {
 }
     // AddressCore localAddress = new AddressCore();
 
+    /*
     ubyte[] generateAddress(ubyte[] address) {
 
         auto hashedKey = address;
 
         return hashedKey;
     }
+    */
 
     // Persist to dddb the address generated
     auto postAddress() {
 
         ubyte[] publicAddress;
         // Some cast here will show necessary
-         generateAddress(publicAddress);
+         //generateAddress(publicAddress);
 
-        foreach (key, value; ) {
+        /*foreach (key, value; publicAddress) {
 
         }
+        */
 
     }
 

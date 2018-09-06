@@ -81,7 +81,7 @@ Some considerations on the steps to generate the hash
     */
 
     
-    ubyte[] generateHash() {
+    ubyte[] generateHash(ubyte[] data) {
         // What is crypto_hash_sha_init?
         // assert(crypto_hash_sha_init() != -1);
 
@@ -91,13 +91,13 @@ Some considerations on the steps to generate the hash
 
         ubyte[8] buf;
 
-       // generateHash = buf;
+       auto hashedData = data;
         
         //ubyte[] [crypto_generichash_BYTES] generalHash;
 
         //crypto_generichash(generalHash.ptr, generalHash.length);
 
-        return generalHash;
+        return hashedData;
     }
 
    
@@ -127,17 +127,18 @@ Some considerations on the steps to generate the hash
     }
 
 unittest {
-
+    
+    /*
     ubyte[] keypair;
     generateHash(keypair);
     auto response = keypair;
     writeln("Generated keypair: ");
-    assert(response == ubyte[]);
     assert(response == "");
 
     ubyte[] genericHash;
     writeln("Applied generic hash:");
     auto response = genericHash;
     assert(response == "");
+    */
     
 }
