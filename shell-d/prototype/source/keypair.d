@@ -57,15 +57,46 @@ Some considerations on the steps to generate the hash
 
     }    
 
-    /*
+    /**
+     *
+     *
+    */
+    ubyte[] convertHexStringToUbytes(in string datain) {
+        // This works also: immutable hexNum = cast(immutable(ubyte)[])x"16D81B16E091F31BEF";
+        // also this: // conversion at compile time
+        // auto string1 = hexString!"304A314B";
+        ubyte[] hexnumbytes = datain /* "16D8..." */
+        .chunks(2) /* "16", "D8", ... */
+        .map!(twoDigits => twoDigits.parse!ubyte(16)) /* 0x16, 0xD8, */
+        .array();
+
+        return hexnumbytes;
+    }
     
-    string convertToHex() {
-        
-        ubyte[] publicKey;
+    /**
+     * convertAsciiStringToHexString - use a regular ascii string as input
+     * 
+     */
+    string convertAsciiStringToHexString(in string datain) {
+        // TODO: add error handling
+        return datain.format!("%(%02X%)");
+    }
+
+    /**
+     * convertToHex - takes ubyte array and converts to hexidecimal representation
+     *
+     */
+    string convertUbytesToHexString(in ubyte[] datain) {
+        // immutable(ubyte)[] b = a.representation;
+        // string c = b.assumeUTF;
+
+        // ubyte[] publicKey;
         
         // publicKey = generateKey();
 
-        auto keyToHex = to!string(publicKey);
+        // string keyToHex;
+
+        // auto keyToHex = to!string(publicKey);
         
         // auto hexdata = hexString!(keyToHex);
 
@@ -78,7 +109,6 @@ Some considerations on the steps to generate the hash
         return convertAsciiStringToHexString(datain.assumeUTF);
     }
 
-    */
 
     
     ubyte[] generateHash(ubyte[][] data, ubyte[][] datain) {

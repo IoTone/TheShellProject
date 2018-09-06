@@ -62,7 +62,12 @@ struct networkPool {
         // Some cast here will show necessary
          //generateAddress(publicAddress);
 
+<<<<<<< HEAD
         /*foreach (key, value; publicAddress) {
+=======
+        /*
+        foreach (key, value; ) {
+>>>>>>> 8a04ef309acd7e92b3094786eded12cd979761c9
 
         }
         */
