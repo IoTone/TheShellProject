@@ -81,21 +81,17 @@ Some considerations on the steps to generate the hash
     */
 
     
-    ubyte[] generateHash(ubyte[] data) {
-        // What is crypto_hash_sha_init?
-        // assert(crypto_hash_sha_init() != -1);
-
-        // crypto_hash_sha256_BYTES;
-        ubyte[] hash;
+    ubyte[] generateHash(ubyte[][] data, ubyte[][] datain) {
+        
         ubyte[] dataLength;
 
         ubyte[8] buf;
+            
+        ubyte[] [crypto_generichash_BYTES] hash;
 
-       auto hashedData = data;
-        
-        //ubyte[] [crypto_generichash_BYTES] generalHash;
+        crypto_generichash(hash.ptr, hash.length);
 
-        //crypto_generichash(generalHash.ptr, generalHash.length);
+        auto hashedData = hash;
 
         return hashedData;
     }

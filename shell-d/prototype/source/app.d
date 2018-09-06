@@ -30,7 +30,6 @@ void main()
 
 	writeln("Hash of actual address : ", );
 	ubyte[8] pkBytes;
-	pkBytes = generateKey();
 	// keypair.generateHash() returns ubyte[]
 	ubyte[] genHash;
 	// ubyte[] generateHash(ubyte[] datain, ubyte[] key) 
