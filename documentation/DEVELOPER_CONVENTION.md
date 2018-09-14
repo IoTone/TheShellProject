@@ -54,10 +54,12 @@ proto1-dev
 
 ```
 
+The same way, staging and stable releases will be placed after the phase name and number.
+
 ### Workflow convention
 
-TODO
+Our general workflow for development are still in constant changing, as we identify new forms to code and follow design patterns concerning D.
 
-### General notes
+### Identation
 
-TODO
+For now, we follow very basic coding style, so, regarding identation, is preferable from 2 to 3 levels of identation to keep the code lean and dry.
