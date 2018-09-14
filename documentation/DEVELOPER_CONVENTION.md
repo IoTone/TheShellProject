@@ -43,7 +43,17 @@ function anyArgs() {
 
 ### Branching convention
 
-Branch's 
+Branches naming convention follows the phase in which we're floating into.
+
+As we keep the prototype phase yet, branch starts with proto + phase number + release stage.
+
+So, for example, let's say we're in the first stage of development, the branch for this would be :
+
+```
+
+- proto1-dev
+
+```
 
 ### Workflow convention
 
