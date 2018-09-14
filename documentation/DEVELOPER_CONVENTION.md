@@ -51,7 +51,7 @@ So, for example, let's say we're in the first stage of development, the branch f
 
 ```
 
-** proto1-dev **
+**proto1-dev**
 
 ```
 
