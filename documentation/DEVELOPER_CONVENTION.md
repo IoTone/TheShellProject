@@ -50,8 +50,7 @@ As we keep the prototype phase yet, branch starts with proto + phase number + re
 So, for example, let's say we're in the first stage of development, the branch for this would be :
 
 ```
-
-**proto1-dev**
+proto1-dev
 
 ```
 
