@@ -46,7 +46,7 @@ Some considerations on the steps to generate the hash
 
     ubyte[] signature; 
     
-    ubyte[] generateKey() {
+    ubyte[] generateKey(ubyte[] datain) {
 
         assert(sodium_init != -1);
         ubyte[8] buf;            
@@ -136,12 +136,12 @@ Some considerations on the steps to generate the hash
     ubyte[] privateKey(ubyte[] datakey) {
 
         ubyte[] privatekey;
-
+        
         generateKey(datakey);
 
-        keypair = datakey;
+        ubyte[] keypair = datakey;
 
-        hashedKey = generateHash(keypair);
+        ubyte[] hashedKey = generateHash(keypair);
 
         return privatekey;
 
