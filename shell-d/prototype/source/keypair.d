@@ -111,7 +111,7 @@ Some considerations on the steps to generate the hash
 
 
     
-    ubyte[] generateHash(ubyte[][] data, ubyte[][] datain) {
+    ubyte[] generateHash(ubyte[] data, ubyte[] datain) {
         
         ubyte[] dataLength;
 
@@ -119,7 +119,7 @@ Some considerations on the steps to generate the hash
             
         ubyte[] [crypto_generichash_BYTES] hash;
 
-        crypto_generichash(hash.ptr, hash.length);
+        crypto_generichash(hash, hash.sizeof, data, datain, null, 0);
 
         auto hashedData = hash;
 
@@ -133,11 +133,17 @@ Some considerations on the steps to generate the hash
     }
     **/
 
-    ubyte[] privateKey() {
+    ubyte[] privateKey(ubyte[] datakey) {
 
-        ubyte[] privateKey;
+        ubyte[] privatekey;
 
-        return privateKey;
+        generateKey(datakey);
+
+        keypair = datakey;
+
+        hashedKey = generateHash(keypair);
+
+        return privatekey;
 
     }
     

@@ -44,23 +44,24 @@ struct networkPool {
      ubyte[] address;
 
 }
-    // AddressCore localAddress = new AddressCore();
+    
+// AddressCore localAddress = new AddressCore();
 
-    /*
-    ubyte[] generateAddress(ubyte[] address) {
+/*
+ubyte[] generateAddress(ubyte[] address) {
 
-        auto hashedKey = address;
+    auto hashedKey = address;
 
         return hashedKey;
     }
     */
 
-    // Persist to dddb the address generated
+// Persist to dddb the address generated
     auto postAddress() {
 
-        ubyte[] publicAddress;
-        // Some cast here will show necessary
-         //generateAddress(publicAddress);
+       ubyte[] publicAddress;
+       // Some cast here will show necessary
+       //generateAddress(publicAddress);
 
         /*foreach (key, value; publicAddress) {
 
@@ -70,23 +71,20 @@ struct networkPool {
     }
 
 
-    // Returns status about the status of the hits for the broadcast over the network
-    bool BroadcastStatus() {
+// Returns status about the status of the hits for the broadcast over the network
+bool BroadcastStatus() {
         return false;
     }
 
-    auto setCheckSum() {
+auto setCheckSum() {
         
     }
 
-    // Persist all the states to the persistence layer
-    auto postAddressState() {
+// Persist all the states to the persistence layer
+auto postAddressState() {
 
     }
-
-    
-    
-
+  
 
 // Check for the local address and sync with the broadcast index of adressess
 void checkAddressIndex() {
