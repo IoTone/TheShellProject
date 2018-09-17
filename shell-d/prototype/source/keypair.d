@@ -92,7 +92,7 @@ Some considerations on the steps to generate the hash
 
         // ubyte[] publicKey;
         
-        // publicKey = generateKey();
+        // generateKey(publicKey);
 
         // string keyToHex;
 
@@ -111,7 +111,13 @@ Some considerations on the steps to generate the hash
 
 
     
-    ubyte[] generateHash(ubyte[] data, ubyte[] datain) {
+    auto generateHash(const message, const messageLength) {
+        
+        const messagein = message;
+
+        const messagelength = messageLength;
+
+        messagelength = 22;
         
         ubyte[] dataLength;
 
@@ -119,11 +125,9 @@ Some considerations on the steps to generate the hash
             
         ubyte[] [crypto_generichash_BYTES] hash;
 
-        crypto_generichash(hash, hash.sizeof, data, datain, null, 0);
+        auto finalHash = crypto_generichash(hash.ptr, hash.length, messagein, messagelength, null, 0);
 
-        auto hashedData = hash;
-
-        return hashedData;
+        return finalHash;
     }
 
    
@@ -146,17 +150,7 @@ Some considerations on the steps to generate the hash
         return privatekey;
 
     }
-    
-    bool verifyAddressKey() {
-        bool addressKeyIsVerified = false;
-        if (addressKeyIsVerified) {
-
-        } else {
-            writeln("Address keypair does not match");
-        }
-        
-        return false;
-    }
+     
 
 unittest {
     

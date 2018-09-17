@@ -101,6 +101,17 @@ bool checkNetworkAddressBlock() {
     return false;
 }
 
+ bool verifyAddressKey() {
+        bool addressKeyIsVerified = false;
+        if (addressKeyIsVerified) {
+
+        } else {
+            writeln("Address keypair does not match");
+        }
+        
+        return false;
+    }
+
 unittest {
         //AddressCore obj = new AddressCore();
 
