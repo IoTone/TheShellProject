@@ -35,33 +35,18 @@ Some considerations on the steps to generate the hash
 
 **/
 
-
-    // These tests handles the generation and verification of keypair
-
-    ubyte[] pkBytes;
-
-    ubyte[] hexData;
-
-    ubyte[] data;
-
-    ubyte[] signature; 
-    
-    ubyte[] generateKey(ubyte[] datain) {
+ubyte[] generateKey(ubyte[] datain) {
 
         assert(sodium_init != -1);
         ubyte[8] buf;            
              
-        pkBytes = buf;
+        ubyte[] pkBytes = buf;
 
         return pkBytes;
 
     }    
 
-    /**
-     *
-     *
-    */
-    ubyte[] convertHexStringToUbytes(in string datain) {
+ubyte[] convertHexStringToUbytes(in string datain) {
         // This works also: immutable hexNum = cast(immutable(ubyte)[])x"16D81B16E091F31BEF";
         // also this: // conversion at compile time
         // auto string1 = hexString!"304A314B";
@@ -77,7 +62,7 @@ Some considerations on the steps to generate the hash
      * convertAsciiStringToHexString - use a regular ascii string as input
      * 
      */
-    string convertAsciiStringToHexString(in string datain) {
+string convertAsciiStringToHexString(in string datain) {
         // TODO: add error handling
         return datain.format!("%(%02X%)");
     }
@@ -86,7 +71,7 @@ Some considerations on the steps to generate the hash
      * convertToHex - takes ubyte array and converts to hexidecimal representation
      *
      */
-    string convertUbytesToHexString(in ubyte[] datain) {
+string convertUbytesToHexString(in ubyte[] datain) {
         // immutable(ubyte)[] b = a.representation;
         // string c = b.assumeUTF;
 
@@ -116,7 +101,7 @@ Some considerations on the steps to generate the hash
         Hash wrapper around libsodium crypto_generichash()
 
     */
-    ubyte[] generateHash(const ubyte[] message) {
+ubyte[] genHash(const ubyte[] message) {
         ubyte[] hash = new ubyte[crypto_generichash_bytes()];
 
         // Method Signature
@@ -126,13 +111,7 @@ Some considerations on the steps to generate the hash
         return hash;
     }
    
-    /** ubyte[] publicKey() {
-        
-        
-    }
-    **/
-
-    ubyte[] privateKey(ubyte[] datakey) {
+ubyte[] privateKey(ubyte[] datakey) {
 
         ubyte[] privatekey;
         
@@ -140,7 +119,7 @@ Some considerations on the steps to generate the hash
 
         ubyte[] keypair = datakey;
 
-        ubyte[] hashedKey = generateHash(keypair);
+        ubyte[] hashedKey = genHash(keypair);
 
         return privatekey;
     }

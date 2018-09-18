@@ -15,8 +15,6 @@ import shelld.keypair;
 import shelld.shellclient;
 import shelld.shellnode;
 
-
-
 void main()
 {
 	writeln("Entry point for The Shell Blockchain.");
@@ -30,28 +28,26 @@ void main()
 
 	writeln("Hash of actual address : ", );
 	ubyte[8] pkBytes;
-	// keypair.generateHash() returns ubyte[]
-	ubyte[] genHash;
+	ubyte[] keypair;	
+	// keypair.genHash() returns ubyte[]
+	ubyte[] keypairHash;
 	// ubyte[] generateHash(ubyte[] datain, ubyte[] key) 
 	ubyte[] datain = to!(ubyte[]) ("This is NachoCheese");
-	genHash = generateHash(datain);
-	writeln("Your public keypair is: ", pkBytes);
-	writeln("Hashed public key: ", genHash);
+	keypairHash = genHash(datain);
+	keypair = generateKey(pkBytes);
+	writeln("Your public keypair is: ", keypair);
+	writeln("Hashed public key: ", keypairHash);
 
 }
+
 
 /**
-string pushHelloWorld() {
-	auto helloWorld_msg = `Hello World into the Blockchain \o/`;
-
-	return helloWorld_msg;
-}
-
 void setLocalAddress() {
 
 	//  auto localAddress = addresscore.localAddress;
 
 }
+
 
 void setLocalAddressToPeer() {
 
