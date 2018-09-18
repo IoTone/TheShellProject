@@ -110,22 +110,18 @@ Some considerations on the steps to generate the hash
     }
 
 
-    
-    auto generateHash(const message, const messageLength) {
-        
-        const messagein = message;
+    /**
+        generateHash
 
-        const messagelength = messageLength;
+        Hash wrapper around libsodium crypto_generichash()
 
-        messagelength = 22;
-        
-        ubyte[] dataLength;
+    */
+    auto generateHash(const ubyte[] message) {
+        ubyte[crypto_generichash_BYTES] hash;
 
-        ubyte[8] buf;
-            
-        ubyte[] [crypto_generichash_BYTES] hash;
-
-        auto finalHash = crypto_generichash(hash.ptr, hash.length, messagein, messagelength, null, 0);
+        // Method Signature
+        // https://download.libsodium.org/doc/hashing/generic_hashing#single-part-example-without-a-key
+        auto finalHash = crypto_generichash(hash.ptr, hash.length, message.ptr, message.length, null, 0);
 
         return finalHash;
     }
@@ -148,7 +144,6 @@ Some considerations on the steps to generate the hash
         ubyte[] hashedKey = generateHash(keypair);
 
         return privatekey;
-
     }
      
 
