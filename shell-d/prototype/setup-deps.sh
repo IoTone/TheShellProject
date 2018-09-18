@@ -4,9 +4,9 @@ cd external
 
 #
 # This is how to build a standard C or C++ library
-# wget https://github.com/jedisct1/libsodium/releases/download/1.0.3/libsodium-1.0.3.tar.gz
-# tar -xvf libsodium-1.0.3.tar.gz
-# cd libsodium-1.0.3
+# wget -O libsodium-1.0.16.tar.gz https://download.libsodium.org/libsodium/releases/libsodium-1.0.16.tar.gz
+# tar -xvf libsodium-1.0.16.tar.gz
+# cd libsodium-1.0.16
 # ./configure --host=$TARGET
 # make
 
