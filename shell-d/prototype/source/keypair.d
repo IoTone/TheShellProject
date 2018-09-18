@@ -111,21 +111,20 @@ Some considerations on the steps to generate the hash
 
 
     /**
-        generateHash
+        generateHash (XXX rename this to genHash)
 
         Hash wrapper around libsodium crypto_generichash()
 
     */
-    auto generateHash(const ubyte[] message) {
-        ubyte[crypto_generichash_BYTES] hash;
+    ubyte[] generateHash(const ubyte[] message) {
+        ubyte[] hash = new ubyte[crypto_generichash_bytes()];
 
         // Method Signature
         // https://download.libsodium.org/doc/hashing/generic_hashing#single-part-example-without-a-key
-        auto finalHash = crypto_generichash(hash.ptr, hash.length, message.ptr, message.length, null, 0);
+        assert(crypto_generichash(hash.ptr, hash.length, message.ptr, message.length, null, 0) == 0);
 
-        return finalHash;
+        return hash;
     }
-
    
     /** ubyte[] publicKey() {
         

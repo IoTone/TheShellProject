@@ -33,8 +33,8 @@ void main()
 	// keypair.generateHash() returns ubyte[]
 	ubyte[] genHash;
 	// ubyte[] generateHash(ubyte[] datain, ubyte[] key) 
-	ubyte[] datain = to!(ubyte[]) ("NachoCheese");
-	genHash = generateHash(datain, pkBytes);
+	ubyte[] datain = to!(ubyte[]) ("This is NachoCheese");
+	genHash = generateHash(datain);
 	writeln("Your public keypair is: ", pkBytes);
 	writeln("Hashed public key: ", genHash);
 
