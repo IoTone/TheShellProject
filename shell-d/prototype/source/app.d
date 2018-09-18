@@ -29,7 +29,18 @@ void main()
 	ubyte[] keypair;	
 	// keypair.genHash() returns ubyte[]
 	ubyte[] keypairHash;
-	ubyte[] datain = to!(ubyte[]) ("This is NachoCheese");
+	
+	// XXX This is not how you do the conversion
+	// XXX ubyte[] datain = to!(ubyte[]) ("This is NachoCheese");
+
+	// We can do this a this conversation a number of ways
+	ubyte[] datain;
+
+	string s1 = "This is Nacho Cheese";
+	datain = cast(ubyte[])("This is Nacho Cheese".dup);
+	// XXX This isn't supported in 2.077.1 datain = s1.representation;
+	// For immutable
+	// datain = cast(immutable(ubyte)[])"This is Nacho Cheese";
 	keypairHash = genHash(datain);
 	keypair = generateKey(pkBytes);
 	writeln("Your public keypair is: ", keypair);
