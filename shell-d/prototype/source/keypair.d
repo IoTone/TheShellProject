@@ -114,6 +114,7 @@ ubyte[] genHash(const ubyte[] message) {
 ubyte[] privateKey(ubyte[] datakey) {
 
         ubyte[] privatekey;
+        ubyte[] signature;
         
         generateKey(datakey);
 
