@@ -8,23 +8,30 @@ module loggingcore;
 
 import std.stdio;
 import std.file : FileException, readText;
+
+import core.stdc.errno;
 import shelld.persistence;
 
+class GeneralShellException : Exception {
 
-string readErrorStream(string err) {
+    auto exceptionHandler = new GeneralShellException;
+    
+    string readErrorStream(string err) {
 
-}
+    }
 
-string printErrorStream()
-{
+    string printErrorStream()
+    {
 
-}
+    }
 
-auto commitErrorStream() {
+    auto commitErrorStream() {
 
-}
+   }
 
-auto retrieveErrorStream(auto errFile) {
+   auto retrieveErrorStream(auto errFile) {
+
+   }
 
 }
 
