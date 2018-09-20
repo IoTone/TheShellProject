@@ -35,4 +35,12 @@ class GeneralShellException : Exception {
 
 }
 
+class ConfigurationException : GeneralShellException {
+
+}
+
+class CryptocoreException : GeneralShellException {
+    
+}
+
 unittest {}
