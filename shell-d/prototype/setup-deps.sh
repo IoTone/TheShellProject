@@ -9,6 +9,9 @@ cd external
 # cd libsodium-1.0.16
 # ./configure --host=$TARGET
 # make
+#
+# Build libraries will be under
+# 
 
 
 # This grabs rocksdb
