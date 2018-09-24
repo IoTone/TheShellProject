@@ -4,7 +4,7 @@
 #
 **/
 
-module loggingcore;
+module shelld.loggingcore;
 
 import std.stdio;
 import std.file : FileException, readText;
