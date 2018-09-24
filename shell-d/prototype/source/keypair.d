@@ -17,6 +17,7 @@ import shelld.addresscore;
 // import shelld.blockcore;
 import shelld.cryptocore;
 import shelld.persistence;
+import shelld.loggingcore;
 import deimos.sodium;
 
 // This module generates a simple plain text keypair and persists it 
@@ -123,6 +124,17 @@ ubyte[] privateKey(ubyte[] datakey) {
         ubyte[] hashedKey = genHash(keypair);
 
         return privatekey;
+    }
+
+    ubyte[] commitKeyPair(ubyte[] const keypair) {
+
+        bool initPersistenceSession;
+        // Use an assert declaration to
+        // guarantee of the persistence
+        // session or something associated
+        // to it for holding the keypair
+        // assert(initPersistenceSession == true);
+        // writeln("Keypair successfully persistence");
     }
      
 

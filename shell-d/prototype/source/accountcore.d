@@ -12,6 +12,7 @@ import std.conv : to;
 import shelld.cryptocore;
 import shelld.keypair;
 import shelld.persistence;
+import shelld.loggingcore;
 
 struct Account {
     string accountId;
@@ -21,6 +22,8 @@ struct Account {
     double[] accountBalance;
     int[] harvestedBlocks;
     int[] transactionPerBlock;
+    ubyte[] checkSum;
+    ubyte[] networkPoolID;
     
 }
 
@@ -60,9 +63,17 @@ auto setVestedBalance() {
         // add consistence and trackability of global status
         if (!accountStatus) {
 
+            string reportStatusError;
+
+
+
+        } else {
+            
+            return accountStatus;
+
         }
 
-        return accountStatus;
+        
 
     }
 
