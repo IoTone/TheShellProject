@@ -8,34 +8,48 @@ module shelld.loggingcore;
 
 import std.stdio;
 import std.file : FileException, readText;
+import std.exception;
 
 import core.stdc.errno;
 import shelld.persistence;
 
 class GeneralShellException : Exception {
 
-    auto exceptionHandler = new GeneralShellException;
+    /*
+    this(string msg, string file = __FILE__, size_t line = __LINE__) {
+        super(msg, file, line);
+    }
+    */
+
+    GeneralShellException exceptionHandler = new GeneralShellException;
     
-    string readErrorStream(string err) {
+    string readErrorStream(string errorStream) {
 
     }
 
-    string printErrorStream()
+    string printErrorStream(string errorStream)
     {
 
     }
 
-    string commitErrorStream() {
+    string commitErrorStream(string errorStream) {
 
    }
 
-   string retrieveErrorStream(auto errFile) {
+   string retrieveErrorStream(string errorStream) {
 
    }
 
 }
+//throw new GeneralShellException("General Shell operation didn't get as expected");
 
 class ConfigurationException : GeneralShellException {
+
+    /*
+    this(string msg, string file = __FILE__, size_t line = __LINE__) {
+        super(msg, file, line);
+    }
+    */
 
     // Here would be nice to specify
     // the OS being in use, so any
@@ -45,16 +59,37 @@ class ConfigurationException : GeneralShellException {
     // Directives to identify the 
     // OS will be entry point.
 
-    auto MSWindows = new ...;
+    // Refers to Windows environmental 
+    // variable to detect issues from
+    // this OS    
+    // auto const MSWindows = new ;
+    
+    // Refers to macOS environmental 
+    // variable to detect issues from
+    // this OS    
+    // auto const macOS = new ...;
 
-    auto macOS = new ...;
-
-    auto Unix = new ...;
+    // Refers to Linux environmental 
+    // variable to detect issues from
+    // this OS    
+    // auto const Unix = new ...;
 
 }
+//throw new ConfigurationException("Crypto operation didn't get as expected");
 
 class CryptocoreException : GeneralShellException {
 
+    /*
+    this(string msg, string file = __FILE__, size_t line = __LINE__) {
+        super(msg, file, line);
+    }
+    */
+    // For some reason I'm getting
+    // circular reference with this
+    // instance declaration
+    //CryptocoreException cryptoCoreErrorHandler = new CryptocoreException;
+
 }
+//throw new CryptocoreException("Crypto operation didn't get as expected");
 
 unittest {}
