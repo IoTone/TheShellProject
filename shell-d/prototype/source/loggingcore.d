@@ -25,11 +25,11 @@ class GeneralShellException : Exception {
 
     }
 
-    auto commitErrorStream() {
+    string commitErrorStream() {
 
    }
 
-   auto retrieveErrorStream(auto errFile) {
+   string retrieveErrorStream(auto errFile) {
 
    }
 
@@ -37,10 +37,24 @@ class GeneralShellException : Exception {
 
 class ConfigurationException : GeneralShellException {
 
+    // Here would be nice to specify
+    // the OS being in use, so any
+    // divergence in the local sys
+    // configurations could be addressed
+    // right the way.
+    // Directives to identify the 
+    // OS will be entry point.
+
+    auto MSWindows = new ...;
+
+    auto macOS = new ...;
+
+    auto Unix = new ...;
+
 }
 
 class CryptocoreException : GeneralShellException {
-    
+
 }
 
 unittest {}
