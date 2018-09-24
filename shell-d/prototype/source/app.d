@@ -35,6 +35,8 @@ void main()
 
 	// We can do this a this conversation a number of ways
 	ubyte[] datain;
+	ubyte[] pvkey;
+	ubyte[] privatekey;
 
 	string s1 = "This is Nacho Cheese";
 	datain = cast(ubyte[])("This is Nacho Cheese".dup);
@@ -43,8 +45,10 @@ void main()
 	// datain = cast(immutable(ubyte)[])"This is Nacho Cheese";
 	keypairHash = genHash(datain);
 	keypair = generateKey(pkBytes);
+	privatekey = privateKey(pvkey);
 	writeln("Your public keypair is: ", keypair);
 	writeln("Hashed public key: ", keypairHash);
+	writeln("Your private key:", privatekey);
 
 }
 

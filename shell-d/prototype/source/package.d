@@ -20,3 +20,4 @@ public import shelld.shellnode;
 public import shelld.persistence;
 public import shelld.keypair;
 public import shelld.transactioncore;
+public import shelld.loggingcore;
