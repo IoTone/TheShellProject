@@ -15,6 +15,9 @@
 	"preBuildCommands": ["echo Building the project"],
 	"copyFiles-windows-x86" : ["lib/*.dll"],
 	"copyFiles-windows-x86_64" : ["lib64/*.dll"],
+	"lflags-osx-x86_64": [
+		"-L."
+	],
 	"lflags-posix" : [
 		"-L."
 	]
