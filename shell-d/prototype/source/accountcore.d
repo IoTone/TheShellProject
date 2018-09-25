@@ -27,11 +27,16 @@ struct Account {
     
 }
 
+/*
 auto checkAccountBalance() {
+
+    return null;
 
 }
 
 auto setHarvestedBlocks() {
+
+    
 
 }
 
@@ -39,21 +44,27 @@ auto setVestedBalance() {
     
 }
 
+
     //Account account;
 
     // Takes anything thats is an asset and attach to account
     auto publishAsset() {
         enum generalAsset;
 
+        bool publishAsset;
+
         int[] assetIndex;
         ubyte[] assetHash;
         // This array holds the hash from the transaction 
         // which generated the asset
         ubyte[] transactionHash;
+
+        return publishedAsset;
     }
 
     bool retrieveGlobalStatus() {
         bool accountStatus;
+        bool globalStatus;
 
         // Here is good to check if the account is ok
         // The peer situation in which the account is hosted 
@@ -73,9 +84,12 @@ auto setVestedBalance() {
 
         }
 
+        return globalStatus;
+
         
 
     }
+*/
 
     unittest {
         //AccountManager am = new AccountManager();

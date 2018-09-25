@@ -126,15 +126,23 @@ ubyte[] privateKey(ubyte[] datakey) {
         return privatekey;
     }
 
-    ubyte[] commitKeyPair(ubyte[] const keypair) {
+    bool commitKeyPair(ubyte[] keypair) {
 
         bool initPersistenceSession;
+        
+        // This variable will be returned
+        // as long the commit works fine
+        // if not, an error stream will
+        // thrown
+        bool commitStatus;
         // Use an assert declaration to
         // guarantee of the persistence
         // session or something associated
         // to it for holding the keypair
         // assert(initPersistenceSession == true);
         // writeln("Keypair successfully persistence");
+
+        return commitStatus;
     }
      
 

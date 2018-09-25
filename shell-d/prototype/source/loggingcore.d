@@ -15,13 +15,13 @@ import shelld.persistence;
 
 class GeneralShellException : Exception {
 
-    /*
+    
     this(string msg, string file = __FILE__, size_t line = __LINE__) {
         super(msg, file, line);
     }
-    */
+    
 
-    string exceptionHandler = new GeneralShellException;
+    // string exceptionHandler = new GeneralShellException;
     
     string readErrorStream(string errorStream) {
 
@@ -61,11 +61,11 @@ class GeneralShellException : Exception {
 
 class ConfigurationException : GeneralShellException {
 
-    /*
+    
     this(string msg, string file = __FILE__, size_t line = __LINE__) {
         super(msg, file, line);
     }
-    */
+    
 
     // Here would be nice to specify
     // the OS being in use, so any
@@ -95,11 +95,11 @@ class ConfigurationException : GeneralShellException {
 
 class CryptocoreException : GeneralShellException {
 
-    /*
+    
     this(string msg, string file = __FILE__, size_t line = __LINE__) {
         super(msg, file, line);
     }
-    */
+    
     // For some reason I'm getting
     // circular reference with this
     // instance declaration
