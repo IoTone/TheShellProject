@@ -151,6 +151,8 @@ unittest {
     writeln("Applied generic hash:");
     auto response = genericHash;
     assert(response == "");
+
+    auto dbSession = new ddb("yes.db");
     */
     
 }

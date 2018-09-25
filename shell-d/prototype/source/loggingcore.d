@@ -25,18 +25,33 @@ class GeneralShellException : Exception {
     
     string readErrorStream(string errorStream) {
 
+        string outputError;
+       
+        return outputError;
+
     }
 
     string printErrorStream(string errorStream)
     {
+        string outputError;
+       
+        return outputError;
 
     }
 
     string commitErrorStream(string errorStream) {
 
+        string outputError;
+       
+        return outputError;
+
    }
 
    string retrieveErrorStream(string errorStream) {
+
+       string outputError;
+       
+       return outputError;
 
    }
    
