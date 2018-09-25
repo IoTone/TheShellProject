@@ -152,15 +152,21 @@ unittest {
     ubyte[] keypair;
     generateHash(keypair);
     auto response = keypair;
+    writeln("Stick 1:")
     writeln("Generated keypair: ");
     assert(response == "");
 
     ubyte[] genericHash;
+    writeln("Stick 2:");
     writeln("Applied generic hash:");
     auto response = genericHash;
     assert(response == "");
 
+    writeln("Stick 3:");
+    writeln("Apply everything to hexString");
+
     auto dbSession = new ddb("yes.db");
+
     */
     
 }

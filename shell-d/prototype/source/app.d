@@ -37,6 +37,7 @@ void main()
 	ubyte[] datain;
 	ubyte[] pvkey;
 	ubyte[] privatekey;
+	ubyte[] ripemd, rpmd;
 
 	string s1 = "This is Nacho Cheese";
 	datain = cast(ubyte[])("This is Nacho Cheese".dup);
@@ -46,9 +47,11 @@ void main()
 	keypairHash = genHash(datain);
 	keypair = generateKey(pkBytes);
 	privatekey = privateKey(pvkey);
+	ripemd = applyRipemd160(keypairHash);
 	writeln("Your public keypair is: ", keypair);
 	writeln("Hashed public key: ", keypairHash);
 	writeln("Your private key:", privatekey);
+	writeln("Test RIPEMD-160:", ripemd);
 
 }
 
