@@ -41,6 +41,8 @@ unittest {
 
 		appliedRipemd = datain;
 
+		appliedRipemd.start();
+
 		return appliedRipemd;
 	}
 	import std.stdio : writefln, writeln;

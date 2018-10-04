@@ -54,22 +54,3 @@ void main()
 	writeln("Test RIPEMD-160:", ripemd);
 
 }
-
-
-/**
-void setLocalAddress() {
-
-	//  auto localAddress = addresscore.localAddress;
-
-}
-
-
-void setLocalAddressToPeer() {
-
-}
-
-// Returns the status of the genesis
-bool genesisBlockStatus() {
-	return false;
-}
-**/
