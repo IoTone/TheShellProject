@@ -1,12 +1,31 @@
 /**
 #
-#Copyright (c) 2018 IoTone, Inc. All rights reserved.
+# Copyright (c) 2018 IoTone, Inc. All rights reserved.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this
+# software and associated documentation files (the "Software"), to deal in the 
+# Software without restriction, including without limitation the rights to use, 
+# copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
+# Software, and to permit persons to whom the Software is furnished to do so, subject
+# to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+# INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+# PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+# CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+# OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 **/
 module shelld.cryptocore;
 
 import deimos.sodium; // Read: https://sodium.dpldocs.info/wrapper.sodium.html
-
+import std.digest.ripemd;
+import std.digest.md;
+import std.stdio;
 //
 // Some thoughts:
 //
@@ -25,26 +44,36 @@ import deimos.sodium; // Read: https://sodium.dpldocs.info/wrapper.sodium.html
 // the sodium library and demios wrapper.  
 // https://github.com/carblue/sodium/blob/master/README.md
 //
+ubyte[] applyRipemd160(ubyte[] datain) {
+
+	ubyte[] appliedRipemd;
+	auto md = new RIPEMD160Digest();
+	ubyte[] hash = md.digest(datain);
+	writeln(toHexString(hash)); // "8EB208F7E05D987A9B044A8E98C6B087F15A0BFC"
+
+	//Feeding data
+	ubyte[1024] data;
+	md.put(data[]);
+	md.reset(); //Start again
+	md.put(data[]);
+	hash = md.finish();
+	// XXX This is an error ... RIPEMD160 datain;
+	/*
+	appliedRipemd = datain;
+
+	appliedRipemd.start();
+	*/
+	return hash;
+}
 
 unittest {
     //
     // These tests just handle exercise of libsodium
     //
-    
-	import std.digest.ripemd.RIPEMD160;
+	ubyte[crypto_aead_aes256gcm_KEYBYTES]  testdata;
+    randombytes_buf(testdata.ptr, testdata.length);
+	applyRipemd160(testdata);
 
-	ubyte[] applyRipemd160(ubyte[] datain) {
-
-		ubyte[] appliedRipemd;
-
-		RIPEMD160 datain;
-
-		appliedRipemd = datain;
-
-		appliedRipemd.start();
-
-		return appliedRipemd;
-	}
 	import std.stdio : writefln, writeln;
     assert(sodium_init != -1);
     // Borrow from : https://github.com/carblue/sodium/blob/master/example/source/app.d#L16
