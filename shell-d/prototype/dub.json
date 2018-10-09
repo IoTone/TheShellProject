@@ -10,7 +10,8 @@
 	"dependencies": {
 		"sodium": "~>0.1.7",
 		"sodium:deimos": "~>0.1.7",
-		"dddb": "~>0.0.6"
+		"dddb": "~>0.0.6",
+		"base32": "~>0.1.0"
 	},
 	"preBuildCommands": ["echo Building the project"],
 	"copyFiles-windows-x86" : ["lib/*.dll"],
