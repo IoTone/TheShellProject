@@ -26,12 +26,7 @@ import deimos.sodium; // Read: https://sodium.dpldocs.info/wrapper.sodium.html
 // https://github.com/carblue/sodium/blob/master/README.md
 //
 
-unittest {
-    //
-    // These tests just handle exercise of libsodium
-    //
-    
-	import std.digest.ripemd.RIPEMD160;
+import std.digest.ripemd.RIPEMD160;
 
 	ubyte[] applyRipemd160(ubyte[] datain) {
 
@@ -45,6 +40,13 @@ unittest {
 
 		return appliedRipemd;
 	}
+
+unittest {
+    //
+    // These tests just handle exercise of libsodium
+    //
+    
+	
 	import std.stdio : writefln, writeln;
     assert(sodium_init != -1);
     // Borrow from : https://github.com/carblue/sodium/blob/master/example/source/app.d#L16

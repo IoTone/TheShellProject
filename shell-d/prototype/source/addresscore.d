@@ -7,6 +7,7 @@ module shelld.addresscore;
 
 import std.stdio;
 import std.string;
+import std.digest.md;
 
 
 import shelld.accountcore;
@@ -26,12 +27,35 @@ struct associatedBlock {
 
 }
 
+ubyte[] generateEncoded(ubyte[] version, ubyte[] publicKey) {
+  ubyte[] data;
+  ubyte[] md5CheckSum;
 
-// Retrieve the KeyPair and generates the address 
-ubyte[] keyPairFetch() {
-    return null;
+  generateKey(publickey);
+
+  pbkey = publickey;
+ 
+  ubyte[] sha256PublicKey = new ubyte[crypto_hash_sha256_BYTES(pbkey)];
+
+  return encodedAddress;
+
+  
 }
 
+
+int storeAddress(ubyte[] address) {
+
+    auto db = new dddb("address.db");
+
+    if (!storeAdressStatus) {
+        storeAdressStatus = -1;
+    } else {
+        storeAdressStatus = 0;
+
+    }
+
+    return storeAdressStatus;
+}
 
 // Inserts the address into a pool struct for full block address stamping
 struct addressPool {
@@ -55,21 +79,6 @@ ubyte[] generateAddress(ubyte[] address) {
         return hashedKey;
     }
     */
-
-// Persist to dddb the address generated
-    auto postAddress() {
-
-       ubyte[] publicAddress;
-       // Some cast here will show necessary
-       //generateAddress(publicAddress);
-
-        /*foreach (key, value; publicAddress) {
-
-        }
-        */
-
-    }
-
 
 // Returns status about the status of the hits for the broadcast over the network
 bool BroadcastStatus() {
