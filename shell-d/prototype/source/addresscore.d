@@ -45,20 +45,29 @@ struct associatedBlock {
 }
 
 ubyte[] generateEncoded(ubyte[] version, ubyte[] publickey) {
-  ubyte[] data;
-  ubyte[] step4CheckSum;
-  ubyte[] step5Concatenate;
+  //ubyte[] data;
+  //ubyte[] step2RipemdOnHash;
+  //ubyte[] step3ByteToRipemd;
+  //ubyte[] step4CheckSum;
+  //ubyte[] step5Concatenate;
+  //ubyte[] step6EncodeToBase32;
 
   generateKey(publickey);
 
-  pbkey = publickey;
+  ubyte[] pbkey = publickey;
  
   ubyte[] sha256PublicKey = new ubyte[crypto_hash_sha256_BYTES(pbkey)];
 
-  step2Key = applyRipemd160(sha256PublicKey);
+  ubyte[] step2RipemdOnHash = applyRipemd160(sha256PublicKey);
 
-  step5Concatenate 
+  ubyte[] step4CheckSum = step3ByteToRipemd[1 .. 5];
+
+  ubyte[] step5Concatenate = step3ByteToRipemd ~ step4CheckSum;
   
+  // step6EncodeToBase32 
+  
+  ubyte[] encodedAddress = step6EncodeToBase32;
+
   return encodedAddress;
 
   
@@ -82,7 +91,7 @@ int storeAddress(ubyte[] address) {
 
 
 unittest {
-        //AddressCore obj = new AddressCore();
+        
 
         // assert(obj.generateAddress() !is null);
 }
