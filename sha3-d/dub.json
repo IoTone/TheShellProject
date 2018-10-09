@@ -1,0 +1,11 @@
+{
+	"name": "sha3-d",
+	"authors": [
+		"David J. Kordsmeier"
+	],
+	"description": "A simple SHA-3 / Keccak hash function for Dlang supporting UTF-8",
+	"copyright": "Copyright © 2018, IoTone, Inc.",
+	"license": "MIT",
+	"dependencies": {
+	}
+}

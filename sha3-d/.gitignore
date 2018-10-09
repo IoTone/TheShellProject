@@ -1,0 +1,14 @@
+.dub
+docs.json
+__dummy.html
+docs/
+sha3-d.so
+sha3-d.dylib
+sha3-d.dll
+sha3-d.a
+sha3-d.lib
+sha3-d-test-*
+*.exe
+*.o
+*.obj
+*.lst
