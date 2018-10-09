@@ -25,6 +25,7 @@ module shelld.addresscore;
 import std.stdio;
 import std.string;
 import std.digest.md;
+import base32;
 
 
 import shelld.accountcore;
@@ -44,7 +45,7 @@ struct associatedBlock {
 
 }
 
-ubyte[] generateEncoded(ubyte[] version, ubyte[] publickey) {
+ubyte[] generateEncoded(ubyte[] publickey) {
   //ubyte[] data;
   //ubyte[] step2RipemdOnHash;
   //ubyte[] step3ByteToRipemd;
@@ -64,7 +65,7 @@ ubyte[] generateEncoded(ubyte[] version, ubyte[] publickey) {
 
   ubyte[] step5Concatenate = step3ByteToRipemd ~ step4CheckSum;
   
-  // step6EncodeToBase32 
+  const(char)[] step6EncodeToBase32 = Base32.encode(step5Concatenate);
   
   ubyte[] encodedAddress = step6EncodeToBase32;
 

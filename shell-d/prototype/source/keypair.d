@@ -150,8 +150,7 @@ ubyte[] privateKey(ubyte[] datakey) {
         auto db = new dddb("keypair.db");
                      
         db.set(key, value);
-        
-        assert();
+                
         // This variable will be returned
         // as long the commit works fine
         // if not, an error stream will
