@@ -44,20 +44,23 @@ struct Account {
     
 }
 
-/*
-auto checkAccountBalance() {
 
-    return null;
+/*
+int checkAccountBalance() {
+
+    return accountBalance;
 
 }
 
-auto setHarvestedBlocks() {
+int setHarvestedBlocks() {
+
+    return harvestedBlocks;
 
     
 
 }
 
-auto setVestedBalance() {
+int setVestedBalance() {
     
 }
 

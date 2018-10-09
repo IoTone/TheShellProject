@@ -140,18 +140,22 @@ ubyte[] privateKey(ubyte[] datakey) {
 
         ubyte[] hashedKey = genHash(keypair);
 
+        storeKeyPair("privatekey", privatekey);
+
         return privatekey;
     }
 
-    bool commitKeyPair(ubyte[] keypair) {
+    int storeKeyPair(string key, ubyte[] value) {
 
-        bool initPersistenceSession;
-        
+        auto db = new dddb("keypair.db");
+                     
+        db.set(key, value);
+                
         // This variable will be returned
         // as long the commit works fine
         // if not, an error stream will
-        // thrown
-        bool commitStatus;
+        // be thrown
+        int commitStatus;
         // Use an assert declaration to
         // guarantee of the persistence
         // session or something associated

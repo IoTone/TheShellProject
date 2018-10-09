@@ -24,6 +24,8 @@ module shelld.addresscore;
 
 import std.stdio;
 import std.string;
+import std.digest.md;
+import base32;
 
 
 import shelld.accountcore;
@@ -43,94 +45,54 @@ struct associatedBlock {
 
 }
 
+ubyte[] generateEncoded(ubyte[] publickey) {
+  //ubyte[] data;
+  //ubyte[] step2RipemdOnHash;
+  //ubyte[] step3ByteToRipemd;
+  //ubyte[] step4CheckSum;
+  //ubyte[] step5Concatenate;
+  //ubyte[] step6EncodeToBase32;
 
-// Retrieve the KeyPair and generates the address 
-ubyte[] keyPairFetch() {
-    return null;
-}
+  generateKey(publickey);
 
+  ubyte[] pbkey = publickey;
+ 
+  ubyte[] sha256PublicKey = new ubyte[crypto_hash_sha256_BYTES(pbkey)];
 
-// Inserts the address into a pool struct for full block address stamping
-struct addressPool {
-     ubyte[] addressHeader;
-     ubyte[] addressOfNode;
-}
+  ubyte[] step2RipemdOnHash = applyRipemd160(sha256PublicKey);
 
-// Some infos about the pool of networking in which the address is integrating
-struct networkPool {
-     ubyte[] address;
+  ubyte[] step4CheckSum = step3ByteToRipemd[1 .. 5];
 
-}
-    
-// AddressCore localAddress = new AddressCore();
-
-/*
-ubyte[] generateAddress(ubyte[] address) {
-
-    auto hashedKey = address;
-
-        return hashedKey;
-    }
-    */
-
-// Persist to dddb the address generated
-    auto postAddress() {
-
-       ubyte[] publicAddress;
-       // Some cast here will show necessary
-       //generateAddress(publicAddress);
-
-        /*foreach (key, value; publicAddress) {
-
-        }
-        */
-
-    }
-
-
-// Returns status about the status of the hits for the broadcast over the network
-bool BroadcastStatus() {
-        return false;
-    }
-
-auto setCheckSum() {
-        
-    }
-
-// Persist all the states to the persistence layer
-auto postAddressState() {
-
-    }
+  ubyte[] step5Concatenate = step3ByteToRipemd ~ step4CheckSum;
   
+  const(char)[] step6EncodeToBase32 = Base32.encode(step5Concatenate);
+  
+  ubyte[] encodedAddress = step6EncodeToBase32;
 
-// Check for the local address and sync with the broadcast index of adressess
-void checkAddressIndex() {
-    
+  return encodedAddress;
+
+  
 }
 
-// Checks for the existence of the address over the network
-bool checkNetworkAddress() {
-    return false;
-}
 
-// Checks for the existence of the address over the network and fetch the genesis block to verify integrity through blockchain
-bool checkNetworkAddressBlock() {
-    return false;
-}
+int storeAddress(ubyte[] address) {
 
- bool verifyAddressKey() {
-        bool addressKeyIsVerified = false;
-        if (addressKeyIsVerified) {
+    auto db = new dddb("address.db");
 
-        } else {
-            writeln("Address keypair does not match");
-        }
-        
-        return false;
+    if (!storeAdressStatus) {
+        storeAdressStatus = -1;
+    } else {
+        storeAdressStatus = 0;
+
     }
+
+    return storeAdressStatus;
+}
+
+
 
 unittest {
-        //AddressCore obj = new AddressCore();
+        
 
         // assert(obj.generateAddress() !is null);
 }

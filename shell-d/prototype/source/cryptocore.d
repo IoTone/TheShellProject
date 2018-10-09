@@ -70,21 +70,9 @@ unittest {
     //
     // These tests just handle exercise of libsodium
     //
-	ubyte[crypto_aead_aes256gcm_KEYBYTES]  testdata;
-    randombytes_buf(testdata.ptr, testdata.length);
-	applyRipemd160(testdata);
-
+    
+	
 	import std.stdio : writefln, writeln;
-    assert(sodium_init != -1);
-    // Borrow from : https://github.com/carblue/sodium/blob/master/example/source/app.d#L16
-    // Manual sodium, chapter "Generating random data":
-	ubyte[8] buf;
-	if (buf.length <= 256) // limit, that linux guarantees by default, using getrandom(); figure can be higher with added True Random Number Generator
-		randombytes_buf(buf.ptr, buf.length);
-    writefln("Unpredictable sequence of %s bytes: %s", buf.length, buf);
-
-    // Borrow from https://github.com/carblue/sodium/blob/master/example/source/app.d#L23
-    // Secret-key authentication example
 	auto MESSAGE = cast(immutable(ubyte)[4]) "test";
 
 	if (crypto_aead_aes256gcm_is_available) {
