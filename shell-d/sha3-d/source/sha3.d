@@ -302,97 +302,113 @@ void f(ref uint[] s) {
   }
 }
 
-/*
-private Keccak(uint bits, uint padding, string outputBits) {
-    private uint[] blocks = [];
-    private uint[] s = [];
-    private uint padding = padding;
-    private string outputBits = outputBits;
-    private bool reset = true;
-    private finalized = false;
-    private uint block = 0;
-    private uint = start = 0;
-    private uint blockCount = (1600 - (bits << 1)) >> 5;
-    private uint byteCount = this.blockCount << 2;
-    private uint outputBlocks = outputBits >> 5;
-    uint extraBytes = (outputBits & 31) >> 3;
+private class Keccak {
+    private:
+        uint[] blocks = [];
+        uint[] s = [];
+        uint padding;
+        string outputBits;
+        bool reset = true;
+        bool finalized = false;
+        uint block = 0;
+        uint start = 0;
+        uint blockCount;
+        uint byteCount;
+        uint outputBlocks;
+        uint extraBytes;
 
-    for (int i = 0; i < 50; ++i) {
-      this.s[i] = 0;
+    /*
+    this(uint bits, uint padding, string outputBits){
+        this.padding = padding;
+        this.outputBits = outputBits;
+        this.blockCount = (1600 - (bits << 1)) >> 5;
+        this.byteCount  = this.blockCount << 2;
+        this.outputBlocks = outputBits >> 5;
+        this.extraBytes = (outputBits & 31) >> 3;
+
+        for (int i = 0; i < 50; ++i) {
+            this.s[i] = 0;
+        }
     }
 
-  Keccak.prototype.update = function (message) {
-    if (this.finalized) {
-      throw new Error(FINALIZE_ERROR);
+    void update(string message) {
+        update(representation(message));
     }
-    var notString, type = typeof message;
-    if (type !== 'string') {
-      if (type === 'object') {
-        if (message === null) {
-          throw new Error(INPUT_ERROR);
-        } else if (ARRAY_BUFFER && message.constructor === ArrayBuffer) {
-          message = new Uint8Array(message);
-        } else if (!Array.isArray(message)) {
-          if (!ARRAY_BUFFER || !ArrayBuffer.isView(message)) {
-            throw new Error(INPUT_ERROR);
-          }
-        }
-      } else {
-        throw new Error(INPUT_ERROR);
-      }
-      notString = true;
-    }
-    var blocks = this.blocks, byteCount = this.byteCount, length = message.length,
-      blockCount = this.blockCount, index = 0, s = this.s, i, code;
 
-    while (index < length) {
-      if (this.reset) {
-        this.reset = false;
-        blocks[0] = this.block;
-        for (i = 1; i < blockCount + 1; ++i) {
-          blocks[i] = 0;
+    void update(immutable ubyte[] messagebytes) {
+        if (this.finalized) {
+            // throw new Error(FINALIZE_ERROR);
         }
-      }
-      if (notString) {
-        for (i = this.start; index < length && i < byteCount; ++index) {
-          blocks[i >> 2] |= message[index] << SHIFT[i++ & 3];
-        }
-      } else {
-        for (i = this.start; index < length && i < byteCount; ++index) {
-          code = message.charCodeAt(index);
-          if (code < 0x80) {
-            blocks[i >> 2] |= code << SHIFT[i++ & 3];
-          } else if (code < 0x800) {
-            blocks[i >> 2] |= (0xc0 | (code >> 6)) << SHIFT[i++ & 3];
-            blocks[i >> 2] |= (0x80 | (code & 0x3f)) << SHIFT[i++ & 3];
-          } else if (code < 0xd800 || code >= 0xe000) {
-            blocks[i >> 2] |= (0xe0 | (code >> 12)) << SHIFT[i++ & 3];
-            blocks[i >> 2] |= (0x80 | ((code >> 6) & 0x3f)) << SHIFT[i++ & 3];
-            blocks[i >> 2] |= (0x80 | (code & 0x3f)) << SHIFT[i++ & 3];
-          } else {
-            code = 0x10000 + (((code & 0x3ff) << 10) | (message.charCodeAt(++index) & 0x3ff));
-            blocks[i >> 2] |= (0xf0 | (code >> 18)) << SHIFT[i++ & 3];
-            blocks[i >> 2] |= (0x80 | ((code >> 12) & 0x3f)) << SHIFT[i++ & 3];
-            blocks[i >> 2] |= (0x80 | ((code >> 6) & 0x3f)) << SHIFT[i++ & 3];
-            blocks[i >> 2] |= (0x80 | (code & 0x3f)) << SHIFT[i++ & 3];
-          }
-        }
-      }
-      this.lastByteIndex = i;
-      if (i >= byteCount) {
-        this.start = i - byteCount;
-        this.block = blocks[blockCount];
-        for (i = 0; i < blockCount; ++i) {
-          s[i] ^= blocks[i];
-        }
-        f(s);
-        this.reset = true;
-      } else {
-        this.start = i;
-      }
     }
-    return this;
-  };
+
+        var notString, type = typeof message;
+        if (type !== 'string') {
+            if (type === 'object') {
+                if (message === null) {
+                throw new Error(INPUT_ERROR);
+                } else if (ARRAY_BUFFER && message.constructor === ArrayBuffer) {
+                message = new Uint8Array(message);
+                } else if (!Array.isArray(message)) {
+                if (!ARRAY_BUFFER || !ArrayBuffer.isView(message)) {
+                    throw new Error(INPUT_ERROR);
+                }
+                }
+            } else {
+                throw new Error(INPUT_ERROR);
+            }
+            notString = true;
+        }
+        var blocks = this.blocks, byteCount = this.byteCount, length = message.length,
+        blockCount = this.blockCount, index = 0, s = this.s, i, code;
+
+        while (index < length) {
+        if (this.reset) {
+            this.reset = false;
+            blocks[0] = this.block;
+            for (i = 1; i < blockCount + 1; ++i) {
+            blocks[i] = 0;
+            }
+        }
+        if (notString) {
+            for (i = this.start; index < length && i < byteCount; ++index) {
+            blocks[i >> 2] |= message[index] << SHIFT[i++ & 3];
+            }
+        } else {
+            for (i = this.start; index < length && i < byteCount; ++index) {
+            code = message.charCodeAt(index);
+            if (code < 0x80) {
+                blocks[i >> 2] |= code << SHIFT[i++ & 3];
+            } else if (code < 0x800) {
+                blocks[i >> 2] |= (0xc0 | (code >> 6)) << SHIFT[i++ & 3];
+                blocks[i >> 2] |= (0x80 | (code & 0x3f)) << SHIFT[i++ & 3];
+            } else if (code < 0xd800 || code >= 0xe000) {
+                blocks[i >> 2] |= (0xe0 | (code >> 12)) << SHIFT[i++ & 3];
+                blocks[i >> 2] |= (0x80 | ((code >> 6) & 0x3f)) << SHIFT[i++ & 3];
+                blocks[i >> 2] |= (0x80 | (code & 0x3f)) << SHIFT[i++ & 3];
+            } else {
+                code = 0x10000 + (((code & 0x3ff) << 10) | (message.charCodeAt(++index) & 0x3ff));
+                blocks[i >> 2] |= (0xf0 | (code >> 18)) << SHIFT[i++ & 3];
+                blocks[i >> 2] |= (0x80 | ((code >> 12) & 0x3f)) << SHIFT[i++ & 3];
+                blocks[i >> 2] |= (0x80 | ((code >> 6) & 0x3f)) << SHIFT[i++ & 3];
+                blocks[i >> 2] |= (0x80 | (code & 0x3f)) << SHIFT[i++ & 3];
+            }
+            }
+        }
+        this.lastByteIndex = i;
+        if (i >= byteCount) {
+            this.start = i - byteCount;
+            this.block = blocks[blockCount];
+            for (i = 0; i < blockCount; ++i) {
+            s[i] ^= blocks[i];
+            }
+            f(s);
+            this.reset = true;
+        } else {
+            this.start = i;
+        }
+        }
+        return this;
+    }
 
   Keccak.prototype.encode = function (x, right) {
     var o = x & 255, n = 1;
@@ -581,8 +597,9 @@ private Keccak(uint bits, uint padding, string outputBits) {
     }
     return array;
   };
+  */
 }
-*/
+
 ///
 unittest {
 
