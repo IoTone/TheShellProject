@@ -187,7 +187,17 @@ unittest {
     assert(dataout28.length == 28);
     writeln(dataout28);
     assert(hexStringT(dataout28) == "2d0708903833afabdd232a20201176e8b58c5be8a6fe74265ac54db0");
-                              
+
+    shake128(dataout32.ptr, 32 /* bytes */, datain2.ptr, datain2.length);
+    assert(dataout32.length == 32);
+    writeln(dataout32);
+    assert(hexStringT(dataout32) == "7f9c2ba4e88f827d616045507605853ed73b8093f6efbc88eb1a6eacfa66ef26");
+
+    shake256(dataout64.ptr, 64 /* bytes */, datain2.ptr, datain2.length);
+    assert(dataout64.length == 64);
+    writeln(dataout64);
+    assert(hexStringT(dataout64) == "46b9dd2b0ba88d13233b3feb743eeb243fcd52ea62b81b82b50c27646ed5762fd75dc4ddd8c0f200cb05019d67b592f6fc821c49479ab48640292eacb3b7c4be");
+
 /*
 
 keccak512('');
@@ -225,11 +235,6 @@ keccak224('The quick brown fox jumps over the lazy dog');
 
 keccak224('The quick brown fox jumps over the lazy dog.');
 // c59d4eaeac728671c635ff645014e2afa935bebffdb5fbd207ffdeab
-
-shake128('', 256);
-// 7f9c2ba4e88f827d616045507605853ed73b8093f6efbc88eb1a6eacfa66ef26
-
-shake256('', 512);
-// 46b9dd2b0ba88d13233b3feb743eeb243fcd52ea62b81b82b50c27646ed5762fd75dc4ddd8c0f200cb05019d67b592f6fc821c49479ab48640292eacb3b7c4be
 */
+
 }
