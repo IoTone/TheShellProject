@@ -34,11 +34,12 @@ unzip rocksdb.zip
 cd rocksdb-master
 cd ..
 
-wget -O libkeccak-tiny.zip https://github.com/coruus/keccak-tiny/archive/singlefile.zip
+wget -O libkeccak-tiny.zip https://github.com/RomanHuryk/keccak-tiny/archive/singlefile.zip
 unzip libkeccak-tiny.zip
 cd libkeccak-tiny
+do.sh
 cp libkeccak-tiny* ../../../libkeccak-d
-make
+
 cd ..
 
 # We good

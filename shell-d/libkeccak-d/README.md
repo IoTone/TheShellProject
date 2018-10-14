@@ -7,7 +7,7 @@ From NIST: NIST announced the SHA-3 Cryptographic Hash Algorithm Competition on 
 ## References
 
 - NIST SHA-3 Project https://csrc.nist.gov/projects/hash-functions/sha-3-project
-- Wrapper around: https://github.com/coruus/keccak-tiny
+- Wrapper around: https://github.com/IoTone/keccak-tiny (fork of) https://github.com/RomanHuryk/keccak-tiny forked from: https://github.com/coruus/keccak-tiny (not maintained)
 - Reading on @safe and @trusted: https://dlang.org/blog/2016/09/28/how-to-write-trusted-code-in-d/
 - Test cases inspired by: https://github.com/emn178/js-sha3#example
 
