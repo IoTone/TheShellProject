@@ -58,6 +58,11 @@ nothrow extern (C)
     int sha3_256(uint8_t*, size_t /* bytes */, const uint8_t*, size_t);
     int sha3_384(uint8_t*, size_t /* bytes */, const uint8_t*, size_t);
     int sha3_512(uint8_t*, size_t /* bytes */, const uint8_t*, size_t);
+
+    int keccak_224(uint8_t*, size_t /* bytes */, const uint8_t*, size_t);
+    int keccak_256(uint8_t*, size_t /* bytes */, const uint8_t*, size_t);
+    int keccak_384(uint8_t*, size_t /* bytes */, const uint8_t*, size_t);
+    int keccak_512(uint8_t*, size_t /* bytes */, const uint8_t*, size_t);
 };
 
 
@@ -197,6 +202,12 @@ unittest {
     assert(dataout64.length == 64);
     writeln(dataout64);
     assert(hexStringT(dataout64) == "46b9dd2b0ba88d13233b3feb743eeb243fcd52ea62b81b82b50c27646ed5762fd75dc4ddd8c0f200cb05019d67b592f6fc821c49479ab48640292eacb3b7c4be");
+
+    keccak_512(dataout64.ptr, 64, datain2.ptr, datain2.length);
+    assert(dataout64.length == 64);
+    writeln(dataout64);
+    assert(hexStringT(dataout64) == "0eab42de4c3ceb9235fc91acffe746b29c29a8c366b7c60e4e67c466f36a4304c00fa9caf9d87976ba469bcbe06713b435f091ef2769fb160cdab33d3670680e");
+
 
 /*
 
