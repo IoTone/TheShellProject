@@ -208,44 +208,58 @@ unittest {
     writeln(dataout64);
     assert(hexStringT(dataout64) == "0eab42de4c3ceb9235fc91acffe746b29c29a8c366b7c60e4e67c466f36a4304c00fa9caf9d87976ba469bcbe06713b435f091ef2769fb160cdab33d3670680e");
 
+    keccak_512(dataout64.ptr, 64, datain.ptr, datain.length);
+    assert(dataout64.length == 64);
+    writeln(dataout64);
+    assert(hexStringT(dataout64) == "d135bb84d0439dbac432247ee573a23ea7d3c9deb2a968eb31d47c4fb45f1ef4422d6c531b5b9bd6f449ebcc449ea94d0a8f05f62130fda612da53c79659f609");
 
-/*
+    keccak_512(dataout64.ptr, 64, datain3.ptr, datain3.length);
+    assert(dataout64.length == 64);
+    writeln(dataout64);
+    assert(hexStringT(dataout64) == "ab7192d2b11f51c7dd744e7b3441febf397ca07bf812cceae122ca4ded6387889064f8db9230f173f6d1ab6e24b6e50f065b039f799f5592360a6558eb52d760");
 
-keccak512('');
-// 0eab42de4c3ceb9235fc91acffe746b29c29a8c366b7c60e4e67c466f36a4304c00fa9caf9d87976ba469bcbe06713b435f091ef2769fb160cdab33d3670680e
+    keccak_384(dataout48.ptr, 48, datain2.ptr, datain2.length);
+    assert(dataout48.length == 48);
+    writeln(dataout48);
+    assert(hexStringT(dataout48) == "2c23146a63a29acf99e73b88f8c24eaa7dc60aa771780ccc006afbfa8fe2479b2dd2b21362337441ac12b515911957ff");
 
-keccak512('The quick brown fox jumps over the lazy dog');
-// d135bb84d0439dbac432247ee573a23ea7d3c9deb2a968eb31d47c4fb45f1ef4422d6c531b5b9bd6f449ebcc449ea94d0a8f05f62130fda612da53c79659f609
+    keccak_384(dataout48.ptr, 48, datain.ptr, datain.length);
+    assert(dataout48.length == 48);
+    writeln(dataout48);
+    assert(hexStringT(dataout48) == "283990fa9d5fb731d786c5bbee94ea4db4910f18c62c03d173fc0a5e494422e8a0b3da7574dae7fa0baf005e504063b3");
 
-keccak512('The quick brown fox jumps over the lazy dog.');
-// ab7192d2b11f51c7dd744e7b3441febf397ca07bf812cceae122ca4ded6387889064f8db9230f173f6d1ab6e24b6e50f065b039f799f5592360a6558eb52d760
+    keccak_384(dataout48.ptr, 48, datain3.ptr, datain3.length);
+    assert(dataout48.length == 48);
+    writeln(dataout48);
+    assert(hexStringT(dataout48) == "9ad8e17325408eddb6edee6147f13856ad819bb7532668b605a24a2d958f88bd5c169e56dc4b2f89ffd325f6006d820b");
 
-keccak384('');
-// 2c23146a63a29acf99e73b88f8c24eaa7dc60aa771780ccc006afbfa8fe2479b2dd2b21362337441ac12b515911957ff
+    keccak_256(dataout32.ptr, 32 /* bytes */, datain2.ptr, datain2.length);
+    assert(dataout32.length == 32);
+    writeln(dataout32);
+    assert(hexStringT(dataout32) == "c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470");
 
-keccak384('The quick brown fox jumps over the lazy dog');
-// 283990fa9d5fb731d786c5bbee94ea4db4910f18c62c03d173fc0a5e494422e8a0b3da7574dae7fa0baf005e504063b3
+    keccak_256(dataout32.ptr, 32 /* bytes */, datain.ptr, datain.length);
+    assert(dataout32.length == 32);
+    writeln(dataout32);
+    assert(hexStringT(dataout32) == "4d741b6f1eb29cb2a9b9911c82f56fa8d73b04959d3d9d222895df6c0b28aa15");
 
-keccak384('The quick brown fox jumps over the lazy dog.');
-// 9ad8e17325408eddb6edee6147f13856ad819bb7532668b605a24a2d958f88bd5c169e56dc4b2f89ffd325f6006d820b
+    keccak_256(dataout32.ptr, 32 /* bytes */, datain3.ptr, datain3.length);
+    assert(dataout32.length == 32);
+    writeln(dataout32);
+    assert(hexStringT(dataout32) == "578951e24efd62a3d63a86f7cd19aaa53c898fe287d2552133220370240b572d");
 
-keccak256('');
-// c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470
+    keccak_224(dataout28.ptr, 28, datain2.ptr, datain2.length);
+    assert(dataout28.length == 28);
+    writeln(dataout28);
+    assert(hexStringT(dataout28) == "f71837502ba8e10837bdd8d365adb85591895602fc552b48b7390abd");
 
-keccak256('The quick brown fox jumps over the lazy dog');
-// 4d741b6f1eb29cb2a9b9911c82f56fa8d73b04959d3d9d222895df6c0b28aa15
+    keccak_224(dataout28.ptr, 28, datain.ptr, datain.length);
+    assert(dataout28.length == 28);
+    writeln(dataout28);
+    assert(hexStringT(dataout28) == "310aee6b30c47350576ac2873fa89fd190cdc488442f3ef654cf23fe");
 
-keccak256('The quick brown fox jumps over the lazy dog.');
-// 578951e24efd62a3d63a86f7cd19aaa53c898fe287d2552133220370240b572d
-
-keccak224('');
-// f71837502ba8e10837bdd8d365adb85591895602fc552b48b7390abd
-
-keccak224('The quick brown fox jumps over the lazy dog');
-// 310aee6b30c47350576ac2873fa89fd190cdc488442f3ef654cf23fe
-
-keccak224('The quick brown fox jumps over the lazy dog.');
-// c59d4eaeac728671c635ff645014e2afa935bebffdb5fbd207ffdeab
-*/
-
+    keccak_224(dataout28.ptr, 28, datain3.ptr, datain3.length);
+    assert(dataout28.length == 28);
+    writeln(dataout28);
+    assert(hexStringT(dataout28) == "c59d4eaeac728671c635ff645014e2afa935bebffdb5fbd207ffdeab");
 }
