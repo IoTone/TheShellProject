@@ -166,10 +166,52 @@ ubyte[] privateKey(ubyte[] datakey) {
 
         return commitStatus;
     }
-     
+
+public class ShellKeyPairFactory {
+    public:
+        this() {
+
+        }
+    
+
+        static ShellKeyPair createKeyPair(string privatekeyhexencoded) {
+            return new ShellKeyPair();
+        }
+
+        // Double check these args, might use ubyte[] instead
+        static bool verifySignature(string publickey, string data, string signature) {
+            return false;
+        }
+}
+public class ShellKeyPair {
+    public:
+        this() {
+
+        }
+
+        string getPublicKey() {
+            return "";
+        }
+
+        string getPrivateKey() {
+            return "";
+        }
+
+        string getSignature() {
+            return "";
+        }
+    
+    private:
+        void foo() {
+
+        } 
+}    
 
 unittest {
-    
+    ShellKeyPair kp1 = new ShellKeyPair();
+
+    assert(kp1!is null);
+
     /*
     ubyte[] keypair;
     generateHash(keypair);
@@ -190,5 +232,7 @@ unittest {
     auto dbSession = new ddb("yes.db");
 
     */
+
+    
     
 }
