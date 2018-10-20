@@ -33,7 +33,8 @@ import std.algorithm: map;
 import shelld.addresscore;
 // import shelld.blockcore;
 import shelld.cryptocore;
-import shelld.persistence;
+// import shelld.persistence;
+import dddb;
 import shelld.loggingcore;
 import deimos.sodium;
 
@@ -147,9 +148,9 @@ ubyte[] privateKey(ubyte[] datakey) {
 
     int storeKeyPair(string key, ubyte[] value) {
 
-        auto db = new dddb("keypair.db");
-                     
-        db.set(key, value);
+        auto db = new ddb("keypair.db");
+        // DDDB only supports string values
+        db.set(key, value.assumeUTF);
                 
         // This variable will be returned
         // as long the commit works fine
