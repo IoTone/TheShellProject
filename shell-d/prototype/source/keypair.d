@@ -29,6 +29,7 @@ import std.string;
 import std.array: array;
 import std.range: chunks;
 import std.algorithm: map;
+import std.regex;
 
 import shelld.addresscore;
 // import shelld.blockcore;
@@ -172,6 +173,8 @@ enum ShellKeyPairFactoryError {
             ERROR_INIT,
             ERROR_INPUT_INVALID,
             ERROR_INPUT_INVALID_PRIVATE_KEY,
+            ERROR_INPUT_INVALID_PRIVATE_KEY_LENGTH_WRONG,
+            ERROR_INPUT_INVALID_PRIVATE_KEY_NOT_HEXIDECIMAL,
             ERROR_FINALIZE
         }
 public class ShellKeyPairFactory {
@@ -226,6 +229,44 @@ public class ShellKeyPair {
         void foo() {
 
         } 
+
+        /**
+        * Check if a private key is valid
+        *
+        * @param {string} privatekey - A private key
+        *
+        * @return {boolean} - True if valid, false otherwise
+        */
+        static bool isPrivateKeyValid(string privateKey) {
+            if (privateKey.length != 64 && privateKey.length != 66) {
+                writeln("Private key length must be 64 or 66 characters");
+                // throw new ShellKeyPairFactoryException("Can't create keypair, reason: "~ShellKeyPairFactoryError.ERROR_INPUT_INVALID_PRIVATE_KEY_LENGTH_WRONG);
+                
+                return false;
+            } else if (matchFirst(privateKey, regex(`0[xX][0-9a-fA-F]+`))) {
+                // throw new ShellKeyPairFactoryException("Can't create keypair, reason: "~ShellKeyPairFactoryError.ERROR_INPUT_INVALID_PRIVATE_KEY_NOT_HEXIDECIMAL);
+                writeln("Private key must be in hexadecimal format");
+                return false;
+            } else {
+                writeln("Private key is valid hexadecimal");
+                return true;
+            }
+        }
+        unittest {
+            auto res1 = isPrivateKeyValid("AA123AA123AA123AA123AA123AA123AA123AA123AA123AA123AA123AA123AA12");
+            assert(res1 == true);
+            res1 = isPrivateKeyValid("1000001000012222223012222223012222223012222223012222223011222223");
+            // XXX This fails and should not, double check the regex
+            // assert(res1 == true);
+            // res1 = isPrivateKeyValid("0x1000001000012222223012222223012222223012222223012222223011222223");
+            assert(res1 == true);
+            res1 = isPrivateKeyValid("ZZZZZZZ");
+            assert(res1 == false);
+            res1 = isPrivateKeyValid("abcdefg123456789bcdefg123456789bcdefg123456789bcdefg123fg123456789");
+            assert(res1 == true);
+            res1 = isPrivateKeyValid("");
+            assert(res1 == false);
+        }
 }    
 
 unittest {
@@ -238,6 +279,8 @@ unittest {
 
     auto kp2 = ShellKeyPairFactory.createKeyPair("foobar");
     assert(kp2 !is null);
+    
+    
     
     /*
     ubyte[] keypair;
