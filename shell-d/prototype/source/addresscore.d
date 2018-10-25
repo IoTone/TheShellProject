@@ -33,7 +33,9 @@ import libkeccak;
 import shelld.accountcore;
 import shelld.cryptocore;
 import shelld.keypair;
-import shelld.persistence;
+import dddb;
+// Import the classes you intend to use
+// import shelld.persistence;
 
 
 ubyte[] addressHash;
@@ -48,6 +50,8 @@ struct associatedBlock {
 }
 
 ubyte[] generateEncoded(ubyte[] publickey) {
+    // Please stop checking in broken code.
+
   //ubyte[] data;
   //ubyte[] step2RipemdOnHash;
   //ubyte[] step3ByteToRipemd;
@@ -55,6 +59,7 @@ ubyte[] generateEncoded(ubyte[] publickey) {
   //ubyte[] step5Concatenate;
   //ubyte[] step6EncodeToBase32;
 
+  /*
   generateKey(publickey);
 
   ubyte[] pbkey = publickey;
@@ -70,17 +75,20 @@ ubyte[] generateEncoded(ubyte[] publickey) {
   const(char)[] step6EncodeToBase32 = Base32.encode(step5Concatenate);
   
   ubyte[] encodedAddress = step6EncodeToBase32;
-
+  
   return encodedAddress;
-
+*/
+return null;
   
 }
 
 
 int storeAddress(ubyte[] address) {
 
-    auto db = new dddb("address.db");
+    auto db = new ddb("address.db");
 
+// Don't check in code that doesn't compile
+    /*
     if (!storeAdressStatus) {
         storeAdressStatus = -1;
     } else {
@@ -89,6 +97,8 @@ int storeAddress(ubyte[] address) {
     }
 
     return storeAdressStatus;
+    */
+    return 0;
 }
 
 

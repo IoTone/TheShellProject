@@ -4,7 +4,7 @@ The Shell Project shell-d is a prototype version of the project.
 
 ## References
 
-- See Project Milestone for Protoype of shell-d: https://github.com/IoTone/TheShellProject/milestone/1
+- See Project Milestone for Protoype of shell-d: https://github.com/IoTone/TheShellProject/milestone/18
 - Adhere to dlang spec: 2.077.1 https://docarchives.dlang.io/v2.077.0/phobos/index.html
 
 ## Design
@@ -45,12 +45,12 @@ LDC - the LLVM D compiler (1.7.0git-07b7abe):
 
 - run: dub test --compiler=ldc2
 
+## Known Issues
+
+- The libkeccak-d implementation won't currently run on windows because it keccak-tiny doesn't build on windows.
+
 ## TODO
 
 - initial commits
 - project plan
-- Find some helpers
-
-## General Notes
-
-TODO
+- recruit more devs

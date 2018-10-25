@@ -33,7 +33,8 @@ import std.algorithm: map;
 import shelld.addresscore;
 // import shelld.blockcore;
 import shelld.cryptocore;
-import shelld.persistence;
+// import shelld.persistence;
+import dddb;
 import shelld.loggingcore;
 import deimos.sodium;
 
@@ -147,9 +148,9 @@ ubyte[] privateKey(ubyte[] datakey) {
 
     int storeKeyPair(string key, ubyte[] value) {
 
-        auto db = new dddb("keypair.db");
-                     
-        db.set(key, value);
+        auto db = new ddb("keypair.db");
+        // DDDB only supports string values
+        db.set(key, value.assumeUTF);
                 
         // This variable will be returned
         // as long the commit works fine
@@ -165,9 +166,78 @@ ubyte[] privateKey(ubyte[] datakey) {
 
         return commitStatus;
     }
-     
+
+enum ShellKeyPairFactoryError {
+            OK,
+            ERROR_INIT,
+            ERROR_INPUT_INVALID,
+            ERROR_INPUT_INVALID_PRIVATE_KEY,
+            ERROR_FINALIZE
+        }
+public class ShellKeyPairFactory {
+    public:
+        
+        this() {
+
+        }
+    
+
+        static ShellKeyPair createKeyPair(string privatekeyhexencoded) {
+            if (privatekeyhexencoded == null) {
+                throw new ShellKeyPairFactoryException("Can't create keypair, reason: "~ShellKeyPairFactoryError.ERROR_INPUT_INVALID_PRIVATE_KEY);
+            } else {
+                return new ShellKeyPair();
+            }
+        }
+
+        // Double check these args, might use ubyte[] instead
+        static bool verifySignature(string publickey, string data, string signature) {
+            return false;
+        }
+
+        /* -------- EXCEPTIONS ------------- */
+ 
+        
+}
+
+class ShellKeyPairFactoryException : Exception {
+            this(string msg) { super(msg); }
+}
+
+public class ShellKeyPair {
+    public:
+        this() {
+
+        }
+
+        string getPublicKey() {
+            return "";
+        }
+
+        string getPrivateKey() {
+            return "";
+        }
+
+        string getSignature() {
+            return "";
+        }
+    
+    private:
+        void foo() {
+
+        } 
+}    
 
 unittest {
+    ShellKeyPair kp1 = new ShellKeyPair();
+
+    assert(kp1 !is null);
+
+    auto ex1 = new ShellKeyPairFactoryException("Can't create keypair, reason: "~ShellKeyPairFactoryError.ERROR_INPUT_INVALID_PRIVATE_KEY);
+    assert(ex1.msg == "Can't create keypair, reason: "~ShellKeyPairFactoryError.ERROR_INPUT_INVALID_PRIVATE_KEY);
+
+    auto kp2 = ShellKeyPairFactory.createKeyPair("foobar");
+    assert(kp2 !is null);
     
     /*
     ubyte[] keypair;
@@ -189,5 +259,7 @@ unittest {
     auto dbSession = new ddb("yes.db");
 
     */
+
+    
     
 }
