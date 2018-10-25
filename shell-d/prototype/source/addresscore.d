@@ -26,6 +26,8 @@ import std.stdio;
 import std.string;
 import std.digest.md;
 import base32;
+import iotone.sha3;
+import libkeccak;
 
 
 import shelld.accountcore;
