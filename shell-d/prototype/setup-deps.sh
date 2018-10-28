@@ -36,7 +36,7 @@ cd ..
 
 wget -O libkeccak-tiny.zip https://github.com/RomanHuryk/keccak-tiny/archive/singlefile.zip
 unzip libkeccak-tiny.zip
-cd libkeccak-tiny
+cd keccak-tiny-singlefile
 do.sh
 cp libkeccak-tiny* ../../../libkeccak-d
 
