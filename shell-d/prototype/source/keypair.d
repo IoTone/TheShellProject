@@ -47,7 +47,7 @@ Some considerations on the steps to generate the hash
 //
 - Take pkBytes and convert it to hexadecimal;
 - Take the output and convert to a length, maybe 160 is fine
-- Apply the SHA-2 (Blake2b) from libsodium
+- Apply the SHA-3 which was wrapped from external js lib
 - Assign some data to verify its the correct associated entry with the keypair
 - Apply the hexData to it
 - Apply and verify through a signature to the keypair 

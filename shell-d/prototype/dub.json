@@ -2,6 +2,7 @@
 	"name": "shell-d",
 	"authors": [
 		"@truedat101",
+
 		"@pedroalvesbatista"
 	],
 	"description": "A Shell-d blockchain prototype implementation",
@@ -15,14 +16,6 @@
 		"libkeccak": {
 			"path": "~/TheShellProject/shell-d/libkeccak",
 			"version": "~master"
-	},
-	"preBuildCommands": ["echo Building the project"],
-	"copyFiles-windows-x86" : ["lib/*.dll"],
-	"copyFiles-windows-x86_64" : ["lib64/*.dll"],
-	"lflags-osx-x86_64": [
-		"-L."
-	],
-	"lflags-posix" : [
-		"-L."
-	]
-}
+	}	
+  }
+}  
