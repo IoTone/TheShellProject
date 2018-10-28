@@ -18,7 +18,8 @@ First obtain external dependencies  and they should build as well if needed:
 > ./setup-deps.sh
 
 Additional steps:
-- For libsodium, if you have built libsodium, point your LD_LIBRARY_PATH to libsodium.  For a default linux install of libsodium, it would be under /usr/local/lib typically.  Set: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+- On linux, for libsodium, build the library from source: https://github.com/jedisct1/libsodium/archive/1.0.16.zip , make sure to install automake, libtool, and compilers.  Run the autogen.sh script.  Then do configure.  Then do make and make install.
+- if you have built libsodium, point your LD_LIBRARY_PATH to libsodium.  For a default linux install of libsodium, it would be under /usr/local/lib typically.  Set: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 - On Mac OS X, you can't set the LD_LIBRARY_PATH explicitly anymore, so a different approach is needed.  It's for security.  Instead, ldc2 is expecting to link libraries from /usr/local possibly, so for libsodium, make
 - ~~You will need a rocksdb library .so.  Build rocksdb directly, and copy the library into the root of this folder~~
 
