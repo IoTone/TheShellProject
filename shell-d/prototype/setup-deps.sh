@@ -34,10 +34,10 @@ cd external
 # cd rocksdb-master
 # cd ..
 
-wget -O libkeccak-tiny.zip https://github.com/RomanHuryk/keccak-tiny/archive/singlefile.zip
+wget -O libkeccak-tiny.zip https://github.com/IoTone/keccak-tiny/archive/singlefile.zip
 unzip libkeccak-tiny.zip
 cd keccak-tiny-singlefile
-do.sh
+sh ./do.sh
 cp libkeccak-tiny* ../../../libkeccak-d
 
 cd ..
