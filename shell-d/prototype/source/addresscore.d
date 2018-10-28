@@ -35,8 +35,6 @@ import shelld.cryptocore;
 import shelld.keypair;
 import dddb;
 // Import the classes you intend to use
-// import shelld.persistence;
-
 
 ubyte[] addressHash;
 
