@@ -64,7 +64,34 @@ ubyte[] generateKey(ubyte[] datain) {
 
         return pkBytes;
 
-    }    
+    }   
+ubyte[] genHash(const ubyte[] message) {
+        ubyte[] hash = new ubyte[crypto_generichash_bytes()];
+
+        // Method Signature
+        // https://download.libsodium.org/doc/hashing/generic_hashing#single-part-example-without-a-key
+        assert(crypto_generichash(hash.ptr, hash.length, message.ptr, message.length, null, 0) == 0);
+
+        return hash;
+    }
+   
+ubyte[] privateKey(ubyte[] datakey) {
+
+        ubyte[] privatekey;
+        ubyte[] signature;
+        
+        generateKey(datakey);
+
+        ubyte[] keypair = datakey;
+
+        ubyte[] hashedKey = genHash(keypair);
+
+        storeKeyPair("privatekey", privatekey);
+
+        return privatekey;
+    }
+
+         
 
 ubyte[] convertHexStringToUbytes(in string datain) {
         // This works also: immutable hexNum = cast(immutable(ubyte)[])x"16D81B16E091F31BEF";
@@ -121,33 +148,7 @@ string convertUbytesToHexString(in ubyte[] datain) {
         Hash wrapper around libsodium crypto_generichash()
 
     */
-ubyte[] genHash(const ubyte[] message) {
-        ubyte[] hash = new ubyte[crypto_generichash_bytes()];
-
-        // Method Signature
-        // https://download.libsodium.org/doc/hashing/generic_hashing#single-part-example-without-a-key
-        assert(crypto_generichash(hash.ptr, hash.length, message.ptr, message.length, null, 0) == 0);
-
-        return hash;
-    }
-   
-ubyte[] privateKey(ubyte[] datakey) {
-
-        ubyte[] privatekey;
-        ubyte[] signature;
-        
-        generateKey(datakey);
-
-        ubyte[] keypair = datakey;
-
-        ubyte[] hashedKey = genHash(keypair);
-
-        storeKeyPair("privatekey", privatekey);
-
-        return privatekey;
-    }
-
-    int storeKeyPair(string key, ubyte[] value) {
+int storeKeyPair(string key, ubyte[] value) {
 
         auto db = new ddb("keypair.db");
         // DDDB only supports string values
@@ -156,17 +157,19 @@ ubyte[] privateKey(ubyte[] datakey) {
         // This variable will be returned
         // as long the commit works fine
         // if not, an error stream will
-        // be thrown
+        // throw new ShellKeyPairFactoryException("Can't store keypair, reason: "~ShellKeyPairFactoryError.ERROR_INIT);
         int commitStatus;
-        // Use an assert declaration to
-        // guarantee of the persistence
-        // session or something associated
-        // to it for holding the keypair
-        // assert(initPersistenceSession == true);
-        // writeln("Keypair successfully persistence");
-
+        /*
+        if {
+            foreach (key, value) {
+                
+            }
+        }
+        
+        */
+        
         return commitStatus;
-    }
+}    
 
 enum ShellKeyPairFactoryError {
             OK,
@@ -279,30 +282,39 @@ unittest {
 
     auto kp2 = ShellKeyPairFactory.createKeyPair("foobar");
     assert(kp2 !is null);
-    
-    
-    
+
     /*
-    ubyte[] keypair;
-    generateHash(keypair);
-    auto response = keypair;
-    writeln("Stick 1:")
-    writeln("Generated keypair: ");
-    assert(response == "");
 
-    ubyte[] genericHash;
-    writeln("Stick 2:");
-    writeln("Applied generic hash:");
-    auto response = genericHash;
-    assert(response == "");
+    string s1 = "This is Nacho Cheese";
+	auto datain = cast(ubyte[])("This is Nacho Cheese".dup);
 
-    writeln("Stick 3:");
-    writeln("Apply everything to hexString");
+    ubyte[] pkBytes, pvkey;
+        
+    auto keypairHash = genHash(datain);
+	auto keypair = generateKey(pkBytes);
+	auto privatekey = privateKey(pvkey);
+	applyRipemd160(keypairHash);
+	auto ripemd = keypairHash;
+	writeln("Your public keypair is: ", keypair);
+	writeln("Hashed public key: ", keypairHash);
+	writeln("Your private key:", privatekey);
+	writeln("Test RIPEMD-160:", ripemd);
+  
 
-    auto dbSession = new ddb("yes.db");
+    // auto hexStrToUbyte = new convertHexStringToUbytes();
+    // assert(hexStrToUbyte = ???); // Here, which should be assigned to make sure did work fine
+    // auto ubyteToHexStr = new convertUbytesToHexString();
+    // assert(ubyteToHexStr = ???); // Here, which should be assigned to make sure did work fine
+    // auto strToUbytes = new convertStringToUbytes();
+    // assert(strToUbytes = ???); // Here, which should be assigned to make sure did work fine
 
-    */
+    // guarantee of the persistence
+    // session or something associated
+    // to it for holding the keypair
+    // assert(initPersistenceSession == 0);
+    // writeln("Keypair successfully persisted");
 
     
+    */
     
 }
