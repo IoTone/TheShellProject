@@ -44,8 +44,8 @@ sh ./simple_do.sh
 cp libkeccak-tiny* ../../../libkeccak-d
 # cp libkeccak-tiny* ../../../../libkeccak-d
 
-cd ..
-# cd ../..
+# cd ..
+cd ../..
 
 # We good
 cd ..
