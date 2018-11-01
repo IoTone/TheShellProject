@@ -34,13 +34,18 @@ cd external
 # cd rocksdb-master
 # cd ..
 
+#
+# We use this nem fork because they got it working across platforms
+#
 wget -O libkeccak-tiny.zip https://github.com/IoTone/keccak-tiny/archive/singlefile.zip
 unzip libkeccak-tiny.zip
 cd keccak-tiny-singlefile
-sh ./do.sh
+sh ./simple_do.sh
 cp libkeccak-tiny* ../../../libkeccak-d
+# cp libkeccak-tiny* ../../../../libkeccak-d
 
 cd ..
+# cd ../..
 
 # We good
 cd ..
