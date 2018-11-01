@@ -22,7 +22,7 @@ Additional steps:
 - if you have built libsodium, point your LD_LIBRARY_PATH to libsodium.  For a default linux install of libsodium, it would be under /usr/local/lib typically.  Set: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 - On Mac OS X, you can't set the LD_LIBRARY_PATH explicitly anymore, so a different approach is needed.  It's for security.  Instead, ldc2 is expecting to link libraries from /usr/local possibly, so for libsodium, make
 - ~~You will need a rocksdb library .so.  Build rocksdb directly, and copy the library into the root of this folder~~
-
+- On Windows, Linux, or Mac, copy your keccak-tiny.lib (Windows) or libkeccak-tiny.[so/dylib] to the root of this project folder.
 
 Then
 - Use Dub, ldc2 or gdc.  We have not tested with DMD.

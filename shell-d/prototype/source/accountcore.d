@@ -31,7 +31,7 @@ import shelld.keypair;
 import shelld.persistence;
 import shelld.loggingcore;
 
-struct Account {
+struct AccountStructDepr {
     string accountId;
     string accountAddress;
     int[] accountBlocksIndex;
