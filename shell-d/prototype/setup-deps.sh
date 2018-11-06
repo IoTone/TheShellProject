@@ -35,7 +35,7 @@ cd external
 # cd ..
 
 #
-# We use this nem fork because they got it working across platforms
+# We use a fork that has specific fixes checked into the build
 #
 wget -O libkeccak-tiny.zip https://github.com/IoTone/keccak-tiny/archive/singlefile.zip
 unzip libkeccak-tiny.zip
