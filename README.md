@@ -6,9 +6,17 @@ The Shell Project: The Shell Project (working name) aims to build a viable gener
 
 Why not.  Coding is an art as much as it is a passion, and embodies a multidisciplinary set of skills.  Cryptocurrency combines many disciplines of computer science, mathematics, and economics.  Blockchain is a realization of an approach to public key infrastructure and distributed work.  We believe the industry needs something not backed by the IBMs of the world, but backed by small companies that seek to support one another in growing the net blockchain economy, freely.  We want to build this first in Dlang because we like working in Dlang as opposed to simply forking someone else's C++ code.   We respect the hard work of others, and will provide attribution where we borrow concepts, site others' work, and generally stand on the backs of giants.
 
+## What is the unique value proposition of The Shell Project's blockchain?
+
+- Goal is a generalized blockchain where transaction cost is free, DAPPs are easy to design, nodes are "green" and not wasting energy on PoW, and blockchain is easy to deploy on standard hardware.
+- Written from scratch, clean room, not a fork of ethereum, bitcoin, or any other blockchain
+- Available under friendly MIT/X Academic License
+
 ## References
 
-- Shells were used as an original currency and value store for early civilizations around the world, primarily in coastal regions.  In particular, indigenous people of North America used shells along the Pacific coast. https://en.wikipedia.org/wiki/Shell_money
+- Shells were used as an original currency and value store for early civilizations around the world, primarily in coastal regions.  In particular, indigenous people of North America used shells along the Pacific coast. [Shells as Currency](https://en.wikipedia.org/wiki/Shell_money).  As kids, many of us who lived near coastal areas learned to collect shells for their beauty and mystery.  In particular, the mathemtical pecularities of shells and the occurance of patterns in nature are amazing.
+- NEM is a great inspiration for this project and the point for which we derived many ideas.  In particular, we studied the NEM Specification in great detail and are giving credit to NEM for the inspiration for our blueprints on our initial implementaiton.  [NEM Technical Reference](https://nem.io/wp-content/themes/nem/files/NEM_techRef.pdf).  Had NEM produced a complete initial blockchain in OSS, we would have forked it and developed a D reference implementation of it.  As such, there were only pieces of Java code, and a complete JS SDK.  These were useful references.
+- Other useful references, Native Chain, a blockchain in "200 LOC" https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54
 
 ### Why not fork Bitcoin?
 
@@ -20,7 +28,7 @@ It appears the forces behind Bytecoin believe in OSS as a marketing tool, but le
 
 ### Why not just use an ECR20 Token
 
-The idea of token contracts has blasted the world with new possibilities, opening an almost unthinkable set of new formats in which we can split trust, business models, as well "freedom formats", where to spot any kind of assets. Contract execution and tokens aren't brand new, but how Ethereum and ECR20 token interfaces with the outside world , undoubtely constitutes game changers. A good reason we do not just use an ECR20 token to accomplish 
+The idea of token contracts has blasted the world with new possibilities, opening an almost unthinkable set of new formats in which we can split trust, business models, as well "freedom of formats", where to place  assets. Contract execution and tokens aren't brand new, but how Ethereum and ECR20 token interfaces with the outside world , undoubtely constitutes game changers. A good reason we do not just use an ECR20 token to accomplish our goals is because Ethereum's network isn't free to use.  Ultimately we like the infrastructure and conepts of ECR20 tokens, however, they've been abused in the past several years by groups claiming to build new platforms, but have primarily seen their values evaporate with the vaporware produced.  We don't want to be associated with mistrust.
 
 ## Use Cases
 
@@ -74,9 +82,8 @@ deserve some cherrypicking, if the license allow us to borrow some of it.
 
 ## Contributions
 
+@truedat101
 @pedroalvesbatista
-
-For what we know, this is the first project from ground up made 100% in Brazil. '-'
 
 ## TODO
 
