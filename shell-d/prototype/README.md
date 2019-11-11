@@ -6,10 +6,16 @@ The Shell Project shell-d is a prototype version of the project.
 
 - See Project Milestone for Protoype of shell-d: https://github.com/IoTone/TheShellProject/milestone/18
 - Adhere to dlang spec: 2.077.1 https://docarchives.dlang.io/v2.077.0/phobos/index.html
+- NEM Blockchain White Paper https://nem.io/wp-content/themes/nem/files/NEM_techRef.pdf
+
+## Inspirations
+
+- NEM Library TS: https://github.com/NemProject/nem-library-ts/
+- NEM2 Library TS/JS https://github.com/nemtech/nem2-sdk-typescript-javascript
 
 ## Design
 
-TODO
+As this is a strawman prototype, we are tracking the original NEM specification with modifications.
 
 ## Building
 
@@ -48,7 +54,7 @@ LDC - the LLVM D compiler (1.7.0git-07b7abe):
 
 ## Known Issues
 
-- The libkeccak-d implementation won't currently run on windows because it keccak-tiny doesn't build on windows.
+- TBD
 
 ## TODO
 

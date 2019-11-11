@@ -1,6 +1,6 @@
 /**
 #
-# Copyright (c) 2018 IoTone, Inc. All rights reserved.
+# Copyright (c) 2018-2019 IoTone, Inc. All rights reserved.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of this
 # software and associated documentation files (the "Software"), to deal in the 
@@ -27,82 +27,43 @@ import std.string;
 import std.digest.md;
 import base32;
 
-
-import shelld.accountcore;
-import shelld.cryptocore;
-import shelld.keypair;
-import dddb;
-// Import the classes you intend to use
-// import shelld.persistence;
-
-
-ubyte[] addressHash;
-
-ubyte[] addressNetwork;
-
-ubyte[] accountHash;
-
-struct associatedBlock {
+/**
+ * address - a struct for holding Shell Address
+ */
+struct Address {
+    string address;
+    ubyte networkType; // Any reason we limit the network types?  Don't we want to enable an ininite number of networks
+    // Consider adding a "supernet" and "subnet" to increate the possible ways of handling addresses
     
-
 }
 
-ubyte[] generateEncoded(ubyte[] publickey) {
-    // Please stop checking in broken code.
+/**
+ * ShellAddress - handles major functionality of creating, parsing, encoding, and exporting addresses
+ */
+public class ShellAddress {
+    private:
+        Address mAddress;
 
-  //ubyte[] data;
-  //ubyte[] step2RipemdOnHash;
-  //ubyte[] step3ByteToRipemd;
-  //ubyte[] step4CheckSum;
-  //ubyte[] step5Concatenate;
-  //ubyte[] step6EncodeToBase32;
+    public:
+        this(string address) {
+            mAddress.address = address;
+            mAddress.networkType = cast(ubyte) address[0];
+        }
 
-  /*
-  generateKey(publickey);
-
-  ubyte[] pbkey = publickey;
- 
-  ubyte[] sha256PublicKey = new ubyte[crypto_hash_sha256_BYTES(pbkey)];
-
-  ubyte[] step2RipemdOnHash = applyRipemd160(sha256PublicKey);
-
-  ubyte[] step4CheckSum = step3ByteToRipemd[1 .. 5];
-
-  ubyte[] step5Concatenate = step3ByteToRipemd ~ step4CheckSum;
-  
-  const(char)[] step6EncodeToBase32 = Base32.encode(step5Concatenate);
-  
-  ubyte[] encodedAddress = step6EncodeToBase32;
-  
-  return encodedAddress;
-*/
-return null;
-  
+        string getAddress() {
+            return mAddress.address;
+        }
 }
-
-
-int storeAddress(ubyte[] address) {
-
-    auto db = new ddb("address.db");
-
-// Don't check in code that doesn't compile
-    /*
-    if (!storeAdressStatus) {
-        storeAdressStatus = -1;
-    } else {
-        storeAdressStatus = 0;
-
-    }
-
-    return storeAdressStatus;
-    */
-    return 0;
-}
-
-
 
 unittest {
-        
+    // Address struct
+    Address addrstruct = Address(
+        "NCBNPE-6HK44F-DTOVCS-CPIKWL-5ZZT2V-UPUGD4-UU5A"
+    );
+    assert(addrstruct.address == "NCBNPE-6HK44F-DTOVCS-CPIKWL-5ZZT2V-UPUGD4-UU5A");
 
-        // assert(obj.generateAddress() !is null);
+    // ShellAddress
+    ShellAddress addr = new ShellAddress("NCBNPE-6HK44F-DTOVCS-CPIKWL-5ZZT2V-UPUGD4-UU5A");
+    assert(addr !is null);
+    assert(addr.getAddress() == "NCBNPE-6HK44F-DTOVCS-CPIKWL-5ZZT2V-UPUGD4-UU5A");
 }
