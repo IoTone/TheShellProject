@@ -2,11 +2,10 @@
 	"name": "shell-d",
 	"authors": [
 		"@truedat101",
-
 		"@pedroalvesbatista"
 	],
 	"description": "A Shell-d blockchain prototype implementation",
-	"copyright": "Copyright 2018, IoTone, Inc.",
+	"copyright": "Copyright 2018-2019, IoTone, Inc.",
 	"license": "MIT",
 	"dependencies": {
 		"sodium": "~>0.1.7",
@@ -16,6 +15,15 @@
 		"libkeccak-d": {
 			"path": "../libkeccak-d",
 			"version": "~master"
-	}	
+	},
+	"preBuildCommands": ["echo Building the project"],
+	"copyFiles-windows-x86" : ["lib/*.dll"],
+	"copyFiles-windows-x86_64" : ["lib64/*.dll"],
+	"lflags-osx-x86_64": [
+		"-L."
+	],
+	"lflags-posix" : [
+		"-L."
+	]
   }
 }  

@@ -54,6 +54,10 @@ public class ShellAddress {
         string getAddress() {
             return mAddress.address;
         }
+
+        string getEncodedAddress() {
+            return mAddress.address.format!("%(%02X%)");
+        }
 }
 
 unittest {
@@ -67,4 +71,5 @@ unittest {
     ShellAddress addr = new ShellAddress("NCBNPE-6HK44F-DTOVCS-CPIKWL-5ZZT2V-UPUGD4-UU5A");
     assert(addr !is null);
     assert(addr.getAddress() == "NCBNPE-6HK44F-DTOVCS-CPIKWL-5ZZT2V-UPUGD4-UU5A");
+    writeln("encoded address: ", addr.getEncodedAddress());
 }
