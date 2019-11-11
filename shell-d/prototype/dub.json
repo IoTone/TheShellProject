@@ -15,15 +15,17 @@
 		"libkeccak-d": {
 			"path": "../libkeccak-d",
 			"version": "~master"
+		}
 	},
 	"preBuildCommands": ["echo Building the project"],
 	"copyFiles-windows-x86" : ["lib/*.dll"],
 	"copyFiles-windows-x86_64" : ["lib64/*.dll"],
 	"lflags-osx-x86_64": [
-		"-L."
+		"-L.",
+		"-L../libkeccak-d"
 	],
 	"lflags-posix" : [
-		"-L."
+		"-L.",
+		"-L../libkeccak-d"
 	]
-  }
 }  
