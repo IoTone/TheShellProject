@@ -1,0 +1,22 @@
+{
+	"name": "libkeccak-d",
+	"authors": [
+		"David J. Kordsmeier"
+	],
+	"description": "A simple SHA-3 / Keccak hash function for Dlang, wraps libkeccak C",
+	"copyright": "Copyright © 2018, IoTone, Inc.",
+	"license": "MIT",
+	"targetType": "library",
+	"dependencies": {
+	},
+	"lflags-osx-x86_64": [
+		"-L."
+	],
+	"lflags-posix" : [
+		"-L."
+	],
+	"lflags-windows-x86_64": [
+		"-L."
+	],
+    "libs": ["keccak-tiny"]
+}

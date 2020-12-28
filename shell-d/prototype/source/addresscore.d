@@ -1,51 +1,75 @@
 /**
 #
-#Copyright (c) 2018 IoTone, Inc. All rights reserved.
+# Copyright (c) 2018-2019 IoTone, Inc. All rights reserved.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this
+# software and associated documentation files (the "Software"), to deal in the 
+# Software without restriction, including without limitation the rights to use, 
+# copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
+# Software, and to permit persons to whom the Software is furnished to do so, subject
+# to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+# INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+# PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+# CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+# OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 **/
 module shelld.addresscore;
 
 import std.stdio;
 import std.string;
+import std.digest.md;
+import base32;
+import libkeccak;
 
-// Inserts the address into a pool struct for full block address stamping
-struct addressPool {
-     string addressHeader;
-     string addressOfNode;
-}
-
-// Some infos about the pool of networking in which the address is integrating
-struct networkPool {
-     string address;
-
-}
-
-
-
-class AddressCore {
-
-    string generateAddress() {
-        return null;
-    }
-
-    // Returns status about the status of the hits for the broadcast over the network
-    bool BroadcastStatus() {
-        return false;
-    }
-
-}
-
-// Check for the local address and sync with the broadcast index of adressess
-void checkAddressIndex() {
+/**
+ * address - a struct for holding Shell Address
+ */
+struct Address {
+    string address;
+    ubyte networkType; // Any reason we limit the network types?  Don't we want to enable an ininite number of networks
+    // Consider adding a "supernet" and "subnet" to increate the possible ways of handling addresses
     
 }
 
-// Checks for the existence of the address over the network
-bool checkNetworkAddress() {
-    return false;
+/**
+ * ShellAddress - handles major functionality of creating, parsing, encoding, and exporting addresses
+ */
+public class ShellAddress {
+    private:
+        Address mAddress;
+
+    public:
+        this(string address) {
+            mAddress.address = address;
+            mAddress.networkType = cast(ubyte) address[0];
+        }
+
+        string getAddress() {
+            return mAddress.address;
+        }
+
+        string getEncodedAddress() {
+            return mAddress.address.format!("%(%02X%)");
+        }
 }
 
-// Checks for the existence of the address over the network and fetch the genesis block to verify integrity through blockchain
-bool checkNetworkAddressBlock() {
-    return false;
+unittest {
+    // Address struct
+    Address addrstruct = Address(
+        "NCBNPE-6HK44F-DTOVCS-CPIKWL-5ZZT2V-UPUGD4-UU5A"
+    );
+    assert(addrstruct.address == "NCBNPE-6HK44F-DTOVCS-CPIKWL-5ZZT2V-UPUGD4-UU5A");
+
+    // ShellAddress
+    ShellAddress addr = new ShellAddress("NCBNPE-6HK44F-DTOVCS-CPIKWL-5ZZT2V-UPUGD4-UU5A");
+    assert(addr !is null);
+    assert(addr.getAddress() == "NCBNPE-6HK44F-DTOVCS-CPIKWL-5ZZT2V-UPUGD4-UU5A");
+    writeln("encoded address: ", addr.getEncodedAddress());
 }

@@ -5,6 +5,27 @@
 		"@pedroalvesbatista"
 	],
 	"description": "A Shell-d blockchain prototype implementation",
-	"copyright": "Copyright 2018, IoTone, Inc.",
-	"license": "MIT"
-}
+	"copyright": "Copyright 2018-2019, IoTone, Inc.",
+	"license": "MIT",
+	"dependencies": {
+		"sodium": "~>0.1.7",
+		"sodium:deimos": "~>0.1.7",
+		"dddb": "~>0.0.6",
+		"base32": "~>0.1.0",
+		"libkeccak-d": {
+			"path": "../libkeccak-d",
+			"version": "~master"
+		}
+	},
+	"preBuildCommands": ["echo Building the project"],
+	"copyFiles-windows-x86" : ["lib/*.dll"],
+	"copyFiles-windows-x86_64" : ["lib64/*.dll"],
+	"lflags-osx-x86_64": [
+		"-L.",
+		"-L../libkeccak-d"
+	],
+	"lflags-posix" : [
+		"-L.",
+		"-L../libkeccak-d"
+	]
+}  

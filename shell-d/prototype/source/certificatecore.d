@@ -20,47 +20,35 @@
 # OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 **/
-module shelld.consensuscore;
+
+module certificatecore;
 
 import shelld.cryptocore;
-import shelld.blockcore;
 import shelld.addresscore;
-import shelld.keypair;
+import shelld.accountcore;
 import shelld.persistence;
-import shelld.shellnode;
+import shelld.keypair;
 
-class Consensus {
+void captureKeypairSignature() {
+    bool keypairValidity;
 
-    unittest {
+    if (keypairValidity) {
 
+    } else {
+        
     }
-
-    void checkBlockProof() {
-
-    }
-
-    void checkBlockAtomicity() {
-
-    }
-
-    void includeAssetIndex() {
-
-    }
-
-    // 
-    void verifyAssetMatrix() {
-  
-    }
-
-    // Determine which peer can perform some operation once green light is took
-    void determinePeerReflection() {
-
-    }
-
-    // Looks for the whole state of blocks that already passed in consensus
-    void checkGlobalState() {
-
-    }
-
-    unittest {}
+    
 }
+
+void secureCertificate() {
+
+}
+
+void generateCertificate() {
+
+}
+
+void pushCertificate() {
+}
+
+unittest {}
