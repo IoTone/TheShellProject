@@ -4,12 +4,12 @@ cd external
 
 #
 # This is how to build a standard C or C++ library
-# wget -O libsodium-1.0.16.tar.gz https://download.libsodium.org/libsodium/releases/libsodium-1.0.16.tar.gz
-# tar -xvf libsodium-1.0.16.tar.gz
-# cd libsodium-1.0.16
-# ./configure --host=$TARGET
+# wget -O libsodium-1.0.18.tar.gz https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable.tar.gz
+# tar -xvf libsodium-1.0.18.tar.gz
+# cd libsodium-stable
+# ./configure
 # make
-#
+# sudo make install
 # Build libraries will be under
 # 
 

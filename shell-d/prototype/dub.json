@@ -5,11 +5,11 @@
 		"@pedroalvesbatista"
 	],
 	"description": "A Shell-d blockchain prototype implementation",
-	"copyright": "Copyright 2018-2019, IoTone, Inc.",
+	"copyright": "Copyright 2018-2020, IoTone, Inc.",
 	"license": "MIT",
 	"dependencies": {
-		"sodium": "~>0.1.7",
-		"sodium:deimos": "~>0.1.7",
+		"sodium": "~>1.0.18-alpha.5",
+		"sodium:deimos": "~>1.0.18-alpha.5",
 		"dddb": "~>0.0.6",
 		"base32": "~>0.1.0",
 		"libkeccak-d": {
